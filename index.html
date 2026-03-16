@@ -30,7 +30,7 @@
     background-color: var(--anthracite-deep);
     color: var(--white-soft);
     overflow-x: hidden;
-    cursor: none;
+    
   }
 
   /* ─── CUSTOM CURSOR ─────────────────────────────── */
@@ -246,7 +246,7 @@
     position: relative;
     overflow: hidden;
     transition: color 0.4s;
-    cursor: none;
+    
   }
   .btn-primary::before {
     content: '';
@@ -272,7 +272,7 @@
     padding: 1rem 1.6rem;
     border: 1px solid rgba(184,168,120,0.2);
     transition: all 0.35s;
-    cursor: none;
+    
   }
   .btn-ghost:hover {
     border-color: var(--gold);
@@ -364,7 +364,7 @@
     padding: 3.5rem 2.8rem;
     position: relative;
     overflow: hidden;
-    cursor: none;
+    
     transition: background 0.4s;
   }
   .service-card::before {
@@ -430,7 +430,7 @@
     text-transform: uppercase;
     color: rgba(184,168,120,0.4);
     transition: color 0.3s, gap 0.3s;
-    cursor: none;
+    
   }
   .service-card:hover .service-arrow { color: var(--gold); gap: 0.9rem; }
 
@@ -458,7 +458,7 @@
     margin-bottom: 1.5px;
     position: relative;
     overflow: hidden;
-    cursor: none;
+    
   }
   .gallery-item-inner {
     aspect-ratio: auto;
@@ -720,7 +720,7 @@
     padding: 1rem 2rem;
     margin-top: 1.5rem;
     transition: all 0.4s;
-    cursor: none;
+    
   }
   .wa-btn:hover {
     background: rgba(37,211,102,0.1);
@@ -739,7 +739,7 @@
     color: rgba(245,243,239,0.35);
     text-decoration: none;
     transition: all 0.35s;
-    cursor: none;
+    
   }
   .social-btn:hover {
     border-color: var(--gold);
@@ -832,7 +832,7 @@
   .menu-toggle {
     display: none;
     flex-direction: column; gap: 5px;
-    cursor: none; padding: 4px;
+     padding: 4px;
   }
   .menu-toggle span {
     display: block; width: 22px; height: 1px;
@@ -1204,7 +1204,7 @@
           </div>
           <div class="contact-info-text">
             <strong>E-Posta</strong>
-            vizyoneventdesign@gmail.com
+            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="493f20333026272c3f2c273d2d2c3a202e27092e24282025672a2624">[email&#160;protected]</a>
           </div>
         </div>
 
@@ -1286,7 +1286,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ─── CUSTOM CURSOR
   const dot  = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');
@@ -1336,11 +1336,4 @@
     links.style.background = 'rgba(26,26,26,0.98)';
     links.style.padding = '2rem';
     links.style.borderBottom = '1px solid rgba(184,168,120,0.1)';
-    links.style.backdropFilter = 'blur(20px)';
-    if (!isOpen) {
-      document.querySelectorAll('#navLinks a').forEach(a => { a.style.marginLeft = '0'; a.style.marginBottom = '1.5rem'; });
-    }
-  });
-
-  // Close mobile menu on link click
-  document.quer
+    links.style.ba
