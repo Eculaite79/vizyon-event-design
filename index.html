@@ -4,234 +4,268 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Vizyon Event Design — Yalova & Kocaeli</title>
-<meta name="description" content="Yalova ve Kocaeli'nin en seçkin etkinlik tasarım stüdyosu. Söz, nişan, kına ve kurumsal organizasyonlar."/>
+<meta name="description" content="Yalova ve Kocaeli'nin en seçkin etkinlik tasarım stüdyosu."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --anthracite-deep: #1a1a1a;
-    --white-soft: #f5f3ef;
-    --gold: #b8a878;
-    --gold-light: #d4c49a;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Jost', sans-serif; background-color: var(--anthracite-deep); color: var(--white-soft); overflow-x: hidden; }
+:root{--bg:#1a1a1a;--bg2:#161616;--bg3:#111;--card:#1d1d1d;--card2:#222;--white:#f5f3ef;--gold:#b8a878;--gold-l:#d4c49a;--gold-d:#8a7a58;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:rgba(184,168,120,0.3);}
+::selection{background:rgba(184,168,120,0.18);color:var(--white);}
 
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: space-between; transition: background 0.5s; }
-  nav.scrolled { background: rgba(26,26,26,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(184,168,120,0.1); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.35em; color: var(--gold-light); text-transform: uppercase; font-weight: 300; }
-  .nav-links a { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.55); margin-left: 2rem; text-decoration: none; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--gold-light); }
-  .menu-toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; background: none; border: none; }
-  .menu-toggle span { display: block; width: 22px; height: 1px; background: var(--gold-light); transition: all 0.3s; }
-  @media(max-width:640px) { .menu-toggle { display: flex; } .nav-links { display: none; } nav { padding: 1.2rem 1.5rem; } }
+/* FIXED SIDEBAR */
+.side-bar{position:fixed;left:1.6rem;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;align-items:center;gap:1.2rem;}
+.side-bar::before,.side-bar::after{content:'';display:block;width:1px;height:45px;background:linear-gradient(to bottom,transparent,rgba(184,168,120,0.25));}
+.side-bar a{color:rgba(184,168,120,0.3);transition:color 0.3s,transform 0.3s;display:flex;}
+.side-bar a:hover{color:var(--gold);transform:scale(1.2);}
+@media(max-width:900px){.side-bar{display:none;}}
 
-  /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: radial-gradient(ellipse at 60% 40%, #2e2a22 0%, #1a1a1a 55%, #111 100%); }
-  .hero-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-  .hero-lines svg { position: absolute; width: 100%; height: 100%; opacity: 0.07; }
-  .grain { position: absolute; inset: 0; pointer-events: none; opacity: 0.3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 180px; mix-blend-mode: overlay; }
-  .v-logo-wrap { position: relative; width: 120px; height: 120px; margin-bottom: 3rem; animation: logoReveal 1.4s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
-  @keyframes logoReveal { from { opacity:0; transform:translateY(20px) scale(0.92); } to { opacity:1; transform:translateY(0) scale(1); } }
-  .v-logo-ring { position: absolute; inset: 0; border: 1px solid rgba(184,168,120,0.3); border-radius: 50%; animation: spinSlow 18s linear infinite; }
-  .v-logo-ring-2 { position: absolute; inset: 8px; border: 1px solid rgba(184,168,120,0.15); border-radius: 50%; animation: spinSlow 24s linear infinite reverse; }
-  @keyframes spinSlow { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
-  .v-letter { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; color: var(--gold-light); }
-  .hero-eyebrow { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; animation: fadeUp 1.2s 0.3s forwards; opacity: 0; }
-  .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6.5vw, 5.8rem); font-weight: 300; line-height: 1.08; text-align: center; color: var(--white-soft); max-width: 780px; animation: fadeUp 1.2s 0.5s forwards; opacity: 0; }
-  .hero-headline em { font-style: italic; color: var(--gold-light); }
-  .hero-sub { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.4); margin-top: 1.6rem; animation: fadeUp 1.2s 0.7s forwards; opacity: 0; }
-  .hero-cta-wrap { margin-top: 3.5rem; display: flex; gap: 1.2rem; align-items: center; animation: fadeUp 1.2s 0.9s forwards; opacity: 0; flex-wrap: wrap; justify-content: center; }
-  .hero-scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; animation: fadeUp 1.2s 1.2s forwards; opacity: 0; }
-  .hero-scroll-hint span { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(184,168,120,0.4); font-family: 'Jost', sans-serif; }
-  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(184,168,120,0.5), transparent); animation: scrollDrop 2s ease-in-out infinite; }
-  @keyframes scrollDrop { 0%,100% { transform:scaleY(0); transform-origin:top; opacity:0; } 50% { transform:scaleY(1); transform-origin:top; opacity:1; } }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background 0.5s;}
+nav.scrolled{background:rgba(26,26,26,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(184,168,120,0.1);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:0.35em;color:var(--gold-l);text-transform:uppercase;font-weight:300;}
+.nav-links a{font-family:'Jost',sans-serif;font-weight:300;font-size:0.67rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,239,0.48);margin-left:1.8rem;text-decoration:none;transition:color 0.3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+.nav-links a:hover{color:var(--gold-l);}.nav-links a:hover::after{width:100%;}
+.menu-toggle{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer;background:none;border:none;}
+.menu-toggle span{display:block;width:22px;height:1px;background:var(--gold-l);transition:all 0.3s;}
+@media(max-width:640px){.menu-toggle{display:flex;}.nav-links{display:none;}nav{padding:1.2rem 1.5rem;}}
 
-  /* BUTTONS */
-  .btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: #1a1a1a; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.4rem; border: none; position: relative; overflow: hidden; transition: color 0.4s; cursor: pointer; }
-  .btn-primary::before { content: ''; position: absolute; inset: 0; background: #1a1a1a; transform: translateX(-101%); transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); }
-  .btn-primary:hover { color: var(--gold); }
-  .btn-primary:hover::before { transform: translateX(0); }
-  .btn-primary span { position: relative; z-index: 1; }
-  .btn-primary svg { position: relative; z-index: 1; }
-  .btn-ghost { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; color: rgba(245,243,239,0.5); font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; padding: 1rem 1.6rem; border: 1px solid rgba(184,168,120,0.2); transition: all 0.35s; cursor: pointer; }
-  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(184,168,120,0.04); }
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 60% 40%,#2e2a22 0%,#1a1a1a 55%,#111 100%);}
+.hero-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.hero-lines svg{position:absolute;width:100%;height:100%;opacity:0.07;}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:0.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-repeat:repeat;background-size:180px;mix-blend-mode:overlay;}
+.v-wrap{position:relative;width:110px;height:110px;margin-bottom:2.8rem;animation:logoIn 1.4s cubic-bezier(0.16,1,0.3,1) forwards;opacity:0;}
+@keyframes logoIn{from{opacity:0;transform:translateY(20px) scale(0.9);}to{opacity:1;transform:translateY(0) scale(1);}}
+.vr1{position:absolute;inset:0;border:1px solid rgba(184,168,120,0.3);border-radius:50%;animation:spin 18s linear infinite;}
+.vr2{position:absolute;inset:8px;border:1px solid rgba(184,168,120,0.15);border-radius:50%;animation:spin 24s linear infinite reverse;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.v-letter{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold-l);}
+.h-eyebrow{font-family:'Jost',sans-serif;font-weight:200;font-size:0.63rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;animation:fu 1.2s 0.3s forwards;opacity:0;}
+.h-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6vw,5.4rem);font-weight:300;line-height:1.1;text-align:center;color:var(--white);max-width:760px;min-height:2.5em;animation:fu 1.2s 0.5s forwards;opacity:0;}
+.h-headline em{font-style:italic;color:var(--gold-l);}
+.typed-cur{display:inline-block;width:2px;height:0.8em;background:var(--gold);margin-left:3px;vertical-align:middle;animation:blink 1s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.h-sub{font-family:'Jost',sans-serif;font-weight:300;font-size:0.76rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.38);margin-top:1.5rem;animation:fu 1.2s 0.7s forwards;opacity:0;}
+.h-cta{margin-top:3.2rem;display:flex;gap:1.2rem;align-items:center;animation:fu 1.2s 0.9s forwards;opacity:0;flex-wrap:wrap;justify-content:center;}
+.h-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;animation:fu 1.2s 1.2s forwards;opacity:0;}
+.h-scroll span{font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(184,168,120,0.38);font-family:'Jost',sans-serif;}
+.scroll-line{width:1px;height:46px;background:linear-gradient(to bottom,rgba(184,168,120,0.5),transparent);animation:sdrop 2s ease-in-out infinite;}
+@keyframes sdrop{0%,100%{transform:scaleY(0);transform-origin:top;opacity:0;}50%{transform:scaleY(1);transform-origin:top;opacity:1;}}
+@keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
 
-  /* SECTIONS */
-  .section { padding: 8rem 2rem; position: relative; }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
-  .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.6rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
-  .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); opacity: 0.6; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; color: var(--white-soft); margin-bottom: 1.5rem; }
-  .section-title em { font-style: italic; color: var(--gold-light); }
-  .divider { width: 60px; height: 1px; background: linear-gradient(to right, var(--gold), transparent); margin-bottom: 3rem; }
+/* BUTTONS */
+.btn-p{display:inline-flex;align-items:center;gap:0.75rem;background:var(--gold);color:#1a1a1a;font-family:'Jost',sans-serif;font-weight:400;font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;text-decoration:none;padding:1rem 2.4rem;border:none;position:relative;overflow:hidden;transition:color 0.4s;cursor:pointer;}
+.btn-p::before{content:'';position:absolute;inset:0;background:#1a1a1a;transform:translateX(-101%);transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);}
+.btn-p:hover{color:var(--gold);}.btn-p:hover::before{transform:translateX(0);}
+.btn-p span,.btn-p svg{position:relative;z-index:1;}
+.btn-g{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;color:rgba(245,243,239,0.48);font-family:'Jost',sans-serif;font-weight:300;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;padding:1rem 1.6rem;border:1px solid rgba(184,168,120,0.2);transition:all 0.35s;cursor:pointer;}
+.btn-g:hover{border-color:var(--gold);color:var(--gold-l);background:rgba(184,168,120,0.04);}
 
-  /* REVEAL */
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
+/* SECTIONS */
+.sec{padding:8rem 2rem;position:relative;}
+.sec-in{max-width:1200px;margin:0 auto;}
+.sec-lbl{font-family:'Jost',sans-serif;font-weight:200;font-size:0.58rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:1rem;}
+.sec-lbl::before{content:'';display:block;width:28px;height:1px;background:var(--gold);opacity:0.6;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;color:var(--white);margin-bottom:1.5rem;}
+.sec-title em{font-style:italic;color:var(--gold-l);}
+.div{width:52px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin-bottom:3rem;}
 
-  /* SERVICES */
-  #services { background: var(--anthracite-deep); }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5px; margin-top: 4rem; background: rgba(184,168,120,0.08); }
-  .service-card { background: #1d1d1d; padding: 3.5rem 2.8rem; position: relative; overflow: hidden; transition: background 0.4s; }
-  .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light)); transition: width 0.6s cubic-bezier(0.16,1,0.3,1); }
-  .service-card:hover { background: #222; }
-  .service-card:hover::before { width: 100%; }
-  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: rgba(184,168,120,0.08); line-height: 1; margin-bottom: 2rem; }
-  .service-icon { width: 42px; height: 42px; margin-bottom: 1.8rem; opacity: 0.7; transition: opacity 0.3s; }
-  .service-card:hover .service-icon { opacity: 1; }
-  .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; color: var(--white-soft); margin-bottom: 0.5rem; }
-  .service-subtitle { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
-  .service-desc { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.82rem; line-height: 1.85; color: rgba(245,243,239,0.45); }
-  .service-arrow { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem; font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(184,168,120,0.4); transition: color 0.3s, gap 0.3s; }
-  .service-card:hover .service-arrow { color: var(--gold); gap: 0.9rem; }
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:0.1s;}.rd2{transition-delay:0.2s;}.rd3{transition-delay:0.3s;}
 
-  /* GALLERY */
-  #gallery { background: #161616; }
-  .gallery-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem; }
-  .gallery-grid { columns: 3; column-gap: 1.5px; }
-  @media(max-width:768px) { .gallery-grid { columns: 2; } }
-  @media(max-width:480px) { .gallery-grid { columns: 1; } }
-  .gallery-item { break-inside: avoid; margin-bottom: 1.5px; position: relative; overflow: hidden; }
-  .gallery-item-inner { position: relative; overflow: hidden; }
-  .gallery-item:nth-child(1) .gallery-item-inner { padding-bottom: 130%; }
-  .gallery-item:nth-child(2) .gallery-item-inner { padding-bottom: 75%; }
-  .gallery-item:nth-child(3) .gallery-item-inner { padding-bottom: 100%; }
-  .gallery-item:nth-child(4) .gallery-item-inner { padding-bottom: 90%; }
-  .gallery-item:nth-child(5) .gallery-item-inner { padding-bottom: 120%; }
-  .gallery-item:nth-child(6) .gallery-item-inner { padding-bottom: 80%; }
-  .gallery-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-  .gallery-item:hover .gallery-placeholder { transform: scale(1.04); }
-  .gallery-item:nth-child(1) .gallery-placeholder { background: linear-gradient(135deg,#1e1c17,#2a2720,#1a1814); }
-  .gallery-item:nth-child(2) .gallery-placeholder { background: linear-gradient(160deg,#201e1a,#2e2b24,#181614); }
-  .gallery-item:nth-child(3) .gallery-placeholder { background: linear-gradient(110deg,#1c1a17,#262420,#1e1c17); }
-  .gallery-item:nth-child(4) .gallery-placeholder { background: linear-gradient(140deg,#1a1917,#232018,#1c1a14); }
-  .gallery-item:nth-child(5) .gallery-placeholder { background: linear-gradient(125deg,#1e1b16,#2a2620,#1a1710); }
-  .gallery-item:nth-child(6) .gallery-placeholder { background: linear-gradient(155deg,#221f1a,#2c2924,#1c1a15); }
-  .gallery-geo { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
-  .gallery-geo svg { opacity: 0.06; }
-  .gallery-overlay { position: absolute; inset: 0; background: rgba(26,24,20,0); display: flex; align-items: flex-end; padding: 1.5rem; transition: background 0.4s; }
-  .gallery-item:hover .gallery-overlay { background: rgba(26,24,20,0.6); }
-  .gallery-tag { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); opacity: 0; transform: translateY(8px); transition: all 0.4s; }
-  .gallery-item:hover .gallery-tag { opacity: 1; transform: translateY(0); }
+/* SERVICES */
+#services{background:var(--bg);}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5px;margin-top:4rem;background:rgba(184,168,120,0.07);}
+.svc-card{background:var(--card);padding:3.5rem 2.8rem;position:relative;overflow:hidden;transition:background 0.4s;}
+.svc-card::before{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(to right,var(--gold),var(--gold-l));transition:width 0.6s cubic-bezier(0.16,1,0.3,1);}
+.svc-card:hover{background:var(--card2);}.svc-card:hover::before{width:100%;}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(184,168,120,0.07);line-height:1;margin-bottom:2rem;}
+.svc-icon{width:40px;height:40px;margin-bottom:1.8rem;opacity:0.65;transition:opacity 0.3s;}
+.svc-card:hover .svc-icon{opacity:1;}
+.svc-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--white);margin-bottom:0.5rem;}
+.svc-sub{font-family:'Jost',sans-serif;font-weight:200;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem;}
+.svc-desc{font-family:'Jost',sans-serif;font-weight:300;font-size:0.8rem;line-height:1.85;color:rgba(245,243,239,0.42);}
+.svc-arr{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.8rem;font-family:'Jost',sans-serif;font-size:0.6rem;font-weight:300;letter-spacing:0.25em;text-transform:uppercase;color:rgba(184,168,120,0.33);transition:color 0.3s,gap 0.3s;}
+.svc-card:hover .svc-arr{color:var(--gold);gap:0.9rem;}
 
-  /* QUOTE */
-  .quote-band { padding: 5rem 2rem; background: #111; border-top: 1px solid rgba(184,168,120,0.08); border-bottom: 1px solid rgba(184,168,120,0.08); text-align: center; }
-  .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 6rem; line-height: 0.5; color: rgba(184,168,120,0.12); display: block; margin-bottom: 1.5rem; }
-  .quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 300; font-style: italic; color: var(--white-soft); max-width: 720px; margin: 0 auto; line-height: 1.6; }
-  .quote-attr { font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 200; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
-  .quote-attr::before, .quote-attr::after { content: ''; display: block; width: 30px; height: 1px; background: rgba(184,168,120,0.3); }
+/* GALLERY MOODBOARD */
+#gallery{background:var(--bg2);}
+.gal-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem;}
+.gal-grid{columns:3;column-gap:2px;}
+@media(max-width:768px){.gal-grid{columns:2;}}@media(max-width:480px){.gal-grid{columns:1;}}
+.gi{break-inside:avoid;margin-bottom:2px;position:relative;overflow:hidden;cursor:pointer;}
+.gi-in{position:relative;overflow:hidden;}
+.gi:nth-child(1) .gi-in{padding-bottom:130%;}.gi:nth-child(2) .gi-in{padding-bottom:72%;}.gi:nth-child(3) .gi-in{padding-bottom:100%;}
+.gi:nth-child(4) .gi-in{padding-bottom:88%;}.gi:nth-child(5) .gi-in{padding-bottom:118%;}.gi:nth-child(6) .gi-in{padding-bottom:78%;}
+.gi-bg{position:absolute;inset:0;transition:transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.gi:hover .gi-bg{transform:scale(1.05);}
+.gi:nth-child(1) .gi-bg{background:linear-gradient(135deg,#1e1c17,#2a2720,#1a1814);}
+.gi:nth-child(2) .gi-bg{background:linear-gradient(160deg,#1c2018,#141a12);}
+.gi:nth-child(3) .gi-bg{background:linear-gradient(110deg,#221a1a,#1a1214);}
+.gi:nth-child(4) .gi-bg{background:linear-gradient(140deg,#1a1c22,#12141a);}
+.gi:nth-child(5) .gi-bg{background:linear-gradient(125deg,#221e14,#1a1810);}
+.gi:nth-child(6) .gi-bg{background:linear-gradient(150deg,#1e1c20,#161418);}
+.gi-geo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.gi-geo svg{opacity:0.06;}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,16,12,0.93) 0%,rgba(18,16,12,0) 55%);opacity:0;transition:opacity 0.4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;}
+.gi:hover .gi-ov{opacity:1;}
+.gi-concept{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:300;font-style:italic;color:var(--white);margin-bottom:0.4rem;}
+.gi-tag{font-family:'Jost',sans-serif;font-weight:200;font-size:0.53rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;}
+.gi-swatches{display:flex;gap:5px;}
+.sw{width:13px;height:13px;border-radius:50%;border:1px solid rgba(255,255,255,0.13);}
 
-  /* ABOUT */
-  #about { background: var(--anthracite-deep); overflow: hidden; }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  @media(max-width:768px) { .about-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  .about-visual { position: relative; height: 480px; }
-  .about-block { position: absolute; border: 1px solid rgba(184,168,120,0.12); }
-  .about-block-1 { inset: 0 40px 40px 0; background: linear-gradient(135deg,#1e1e1e,#161614); display: flex; align-items: center; justify-content: center; }
-  .about-block-2 { bottom: 0; right: 0; width: 150px; height: 150px; border-color: rgba(184,168,120,0.25); background: #1a1a18; }
-  .about-block-3 { top: -20px; left: -20px; width: 80px; height: 80px; border-color: rgba(184,168,120,0.15); }
-  .about-monogram { font-family: 'Cormorant Garamond', serif; font-size: 8rem; font-weight: 300; color: rgba(184,168,120,0.08); line-height: 1; user-select: none; }
-  .about-stat { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 0.3rem; }
-  .about-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
-  .about-stat-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,243,239,0.35); text-align: center; }
-  .about-text p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; line-height: 2; color: rgba(245,243,239,0.5); margin-bottom: 1.4rem; }
-  .about-text p strong { color: var(--white-soft); font-weight: 400; }
-  .about-values { display: flex; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap; }
-  .about-value { display: flex; align-items: center; gap: 0.6rem; font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,168,120,0.6); }
-  .about-value::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+/* QUOTE */
+.quote-band{padding:5rem 2rem;background:var(--bg3);border-top:1px solid rgba(184,168,120,0.08);border-bottom:1px solid rgba(184,168,120,0.08);text-align:center;}
+.qm{font-family:'Cormorant Garamond',serif;font-size:6rem;line-height:0.5;color:rgba(184,168,120,0.1);display:block;margin-bottom:1.5rem;}
+.qt{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.85rem);font-weight:300;font-style:italic;color:var(--white);max-width:700px;margin:0 auto;line-height:1.65;}
+.qa{font-family:'Jost',sans-serif;font-size:0.6rem;font-weight:200;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-top:1.8rem;display:flex;align-items:center;justify-content:center;gap:1rem;}
+.qa::before,.qa::after{content:'';display:block;width:28px;height:1px;background:rgba(184,168,120,0.3);}
 
-  /* PRICING */
-  #pricing { background: #161616; }
-  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; margin-top: 4rem; background: rgba(184,168,120,0.08); }
-  .pricing-card { background: #1d1d1d; padding: 3rem 2.5rem; position: relative; transition: background 0.4s; }
-  .pricing-card.featured { background: #222018; }
-  .pricing-card.featured::after { content: 'Popüler'; position: absolute; top: 1.5rem; right: 1.5rem; font-family: 'Jost', sans-serif; font-size: 0.55rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: #1a1a1a; background: var(--gold); padding: 0.3rem 0.8rem; }
-  .pricing-card:hover { background: #252520; }
-  .pricing-name { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  .pricing-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--white-soft); margin-bottom: 1.5rem; }
-  .pricing-price { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.4rem; }
-  .pricing-price span { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 200; color: rgba(245,243,239,0.3); }
-  .pricing-divider { width: 100%; height: 1px; background: rgba(184,168,120,0.1); margin: 1.8rem 0; }
-  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 2.5rem; }
-  .pricing-features li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.78rem; color: rgba(245,243,239,0.5); display: flex; align-items: center; gap: 0.7rem; }
-  .pricing-features li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+/* ABOUT */
+#about{background:var(--bg);overflow:hidden;position:relative;}
+.ab-parallax{position:absolute;inset:-10%;pointer-events:none;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:350px;transition:transform 0.08s linear;will-change:transform;}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;position:relative;z-index:1;}
+@media(max-width:768px){.ab-grid{grid-template-columns:1fr;gap:3rem;}}
+.ab-vis{position:relative;height:460px;}
+.ab-blk{position:absolute;border:1px solid rgba(184,168,120,0.12);}
+.ab-blk1{inset:0 40px 40px 0;background:linear-gradient(135deg,#1e1e1e,#161614);display:flex;align-items:center;justify-content:center;}
+.ab-blk2{bottom:0;right:0;width:145px;height:145px;border-color:rgba(184,168,120,0.25);background:#1a1a18;}
+.ab-blk3{top:-18px;left:-18px;width:75px;height:75px;border-color:rgba(184,168,120,0.15);}
+.ab-mono{font-family:'Cormorant Garamond',serif;font-size:7.5rem;font-weight:300;color:rgba(184,168,120,0.07);line-height:1;user-select:none;}
+.ab-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:0.3rem;}
+.ab-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--gold-l);line-height:1;}
+.ab-lbl{font-family:'Jost',sans-serif;font-weight:200;font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,243,239,0.3);text-align:center;}
+.ab-txt p{font-family:'Jost',sans-serif;font-weight:300;font-size:0.82rem;line-height:2;color:rgba(245,243,239,0.47);margin-bottom:1.3rem;}
+.ab-txt p strong{color:var(--white);font-weight:400;}
+.ab-vals{display:flex;gap:1.8rem;margin-top:2.2rem;flex-wrap:wrap;}
+.ab-val{display:flex;align-items:center;gap:0.6rem;font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:rgba(184,168,120,0.53);}
+.ab-val::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
 
-  /* TESTIMONIALS */
-  #testimonials { background: var(--anthracite-deep); }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5px; margin-top: 4rem; background: rgba(184,168,120,0.08); }
-  .testimonial-card { background: #1d1d1d; padding: 2.8rem; position: relative; }
-  .testimonial-stars { display: flex; gap: 0.3rem; margin-bottom: 1.5rem; }
-  .testimonial-stars span { color: var(--gold); font-size: 0.75rem; }
-  .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 300; font-style: italic; color: rgba(245,243,239,0.75); line-height: 1.8; margin-bottom: 2rem; }
-  .testimonial-author { display: flex; align-items: center; gap: 1rem; }
-  .testimonial-avatar { width: 38px; height: 38px; border: 1px solid rgba(184,168,120,0.2); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold-light); flex-shrink: 0; }
-  .testimonial-name { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.75rem; color: var(--white-soft); }
-  .testimonial-event { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
-  .t-quote { position: absolute; top: 1.5rem; right: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 1; color: rgba(184,168,120,0.06); pointer-events: none; }
+/* PRICING */
+#pricing{background:var(--bg2);}
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5px;margin-top:4rem;background:rgba(184,168,120,0.07);}
+.pkg-card{background:var(--card);position:relative;overflow:hidden;cursor:pointer;}
+.pkg-card.gold-p{background:#1e1d16;}
+.pkg-front{padding:3rem 2.5rem;transition:opacity 0.38s,transform 0.38s;}
+.pkg-back{position:absolute;inset:0;padding:2.5rem;background:var(--bg3);opacity:0;transform:translateY(14px);transition:opacity 0.38s,transform 0.38s;display:flex;flex-direction:column;justify-content:space-between;}
+.pkg-card:hover .pkg-front{opacity:0;transform:translateY(-10px);}
+.pkg-card:hover .pkg-back{opacity:1;transform:translateY(0);}
+.pkg-tier{font-family:'Jost',sans-serif;font-weight:200;font-size:0.53rem;letter-spacing:0.45em;text-transform:uppercase;margin-bottom:0.8rem;}
+.pkg-card:nth-child(1) .pkg-tier{color:rgba(192,192,192,0.65);}
+.pkg-card:nth-child(2) .pkg-tier{color:var(--gold);}
+.pkg-card:nth-child(3) .pkg-tier{color:#c9a84c;}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--white);margin-bottom:1.2rem;}
+.pkg-note{font-family:'Jost',sans-serif;font-weight:200;font-size:0.6rem;color:rgba(245,243,239,0.28);letter-spacing:0.12em;margin-bottom:0.3rem;}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--gold-l);line-height:1;margin-bottom:1.8rem;}
+.pkg-teaser{font-family:'Jost',sans-serif;font-weight:300;font-size:0.74rem;color:rgba(245,243,239,0.36);line-height:1.7;}
+.pkg-hint{position:absolute;bottom:1.2rem;right:1.5rem;font-family:'Jost',sans-serif;font-size:0.53rem;font-weight:200;letter-spacing:0.18em;color:rgba(184,168,120,0.28);text-transform:uppercase;transition:opacity 0.3s;}
+.pkg-card:hover .pkg-hint{opacity:0;}
+.pkg-div{width:100%;height:1px;background:rgba(184,168,120,0.1);margin:1.5rem 0;}
+.pkg-feats{list-style:none;display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.8rem;}
+.pkg-feats li{font-family:'Jost',sans-serif;font-weight:300;font-size:0.74rem;color:rgba(245,243,239,0.53);display:flex;align-items:center;gap:0.6rem;}
+.pkg-feats li::before{content:'';width:3px;height:3px;background:var(--gold);border-radius:50%;flex-shrink:0;}
 
-  /* CONTACT */
-  #contact { background: #161616; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  @media(max-width:768px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  .contact-info-item { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 2rem; }
-  .contact-info-icon { width: 36px; height: 36px; flex-shrink: 0; border: 1px solid rgba(184,168,120,0.2); display: flex; align-items: center; justify-content: center; }
-  .contact-info-text { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.8rem; line-height: 1.7; color: rgba(245,243,239,0.45); }
-  .contact-info-text strong { display: block; font-weight: 400; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
-  .wa-btn { display: inline-flex; align-items: center; gap: 0.9rem; background: #1a2a1a; border: 1px solid rgba(37,211,102,0.25); color: #68d38a; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; margin-top: 1.5rem; transition: all 0.4s; }
-  .wa-btn:hover { background: rgba(37,211,102,0.1); border-color: rgba(37,211,102,0.5); color: #7ee899; }
-  .social-row { display: flex; gap: 1rem; margin-top: 2rem; }
-  .social-btn { width: 42px; height: 42px; border: 1px solid rgba(184,168,120,0.15); display: flex; align-items: center; justify-content: center; color: rgba(245,243,239,0.35); text-decoration: none; transition: all 0.35s; }
-  .social-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,168,120,0.06); }
-  .contact-form { display: flex; flex-direction: column; gap: 0; }
-  .form-group { position: relative; margin-bottom: 1.5px; }
-  .form-input { width: 100%; background: #1d1d1d; border: none; border-bottom: 1px solid rgba(184,168,120,0.1); color: var(--white-soft); font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.82rem; padding: 1.2rem 1rem 1.2rem 0; outline: none; transition: border-color 0.3s; }
-  .form-input:focus { border-color: var(--gold); }
-  .form-input::placeholder { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,243,239,0.2); }
-  textarea.form-input { resize: none; height: 100px; }
+/* TESTIMONIALS MARQUEE */
+#testimonials{background:var(--bg);overflow:hidden;}
+.mq-wrap{margin-top:3.5rem;overflow:hidden;position:relative;}
+.mq-wrap::before,.mq-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;}
+.mq-wrap::before{left:0;background:linear-gradient(to right,var(--bg),transparent);}
+.mq-wrap::after{right:0;background:linear-gradient(to left,var(--bg),transparent);}
+.mq-track{display:flex;gap:1.5px;animation:mq 40s linear infinite;width:max-content;}
+.mq-track:hover{animation-play-state:paused;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.tc{background:var(--card);padding:2.5rem 2.2rem;width:330px;flex-shrink:0;position:relative;transition:background 0.3s;}
+.tc:hover{background:var(--card2);}
+.tc-photo{width:100%;height:130px;margin-bottom:1.4rem;overflow:hidden;position:relative;}
+.tc-photo-in{position:absolute;inset:0;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);}
+.tc:hover .tc-photo-in{transform:scale(1.05);}
+.tp1{background:linear-gradient(135deg,#2a2318,#1e1c14);}
+.tp2{background:linear-gradient(160deg,#1c2018,#141a12);}
+.tp3{background:linear-gradient(110deg,#221a1a,#1a1214);}
+.tp4{background:linear-gradient(140deg,#1a1c22,#12141a);}
+.tp5{background:linear-gradient(125deg,#221e14,#1a1810);}
+.tc-plbl{position:absolute;bottom:0.6rem;left:0.8rem;font-family:'Jost',sans-serif;font-size:0.48rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(184,168,120,0.45);}
+.tc-pico{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.06;}
+.tc-stars{display:flex;gap:3px;margin-bottom:1rem;}
+.tc-stars span{color:var(--gold);font-size:0.68rem;}
+.tc-text{font-family:'Cormorant Garamond',serif;font-size:0.98rem;font-weight:300;font-style:italic;color:rgba(245,243,239,0.7);line-height:1.8;margin-bottom:1.4rem;}
+.tc-author{display:flex;align-items:center;gap:0.9rem;}
+.tc-av{width:32px;height:32px;border:1px solid rgba(184,168,120,0.2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:0.88rem;color:var(--gold-l);flex-shrink:0;}
+.tc-name{font-family:'Jost',sans-serif;font-weight:400;font-size:0.7rem;color:var(--white);}
+.tc-event{font-family:'Jost',sans-serif;font-weight:200;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:0.15rem;}
+.tq{position:absolute;top:1rem;right:1.5rem;font-family:'Cormorant Garamond',serif;font-size:4.5rem;line-height:1;color:rgba(184,168,120,0.05);pointer-events:none;}
 
-  /* FOOTER */
-  footer { background: var(--anthracite-deep); border-top: 1px solid rgba(184,168,120,0.08); padding: 3rem 2rem; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 300; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; }
-  .footer-copy { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.2); text-align: center; }
-  .footer-location { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,168,120,0.4); text-align: right; }
+/* CONTACT */
+#contact{background:var(--bg2);}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+@media(max-width:768px){.ct-grid{grid-template-columns:1fr;gap:3rem;}}
+.ci-item{display:flex;gap:1.1rem;align-items:flex-start;margin-bottom:1.8rem;}
+.ci-ico{width:34px;height:34px;flex-shrink:0;border:1px solid rgba(184,168,120,0.18);display:flex;align-items:center;justify-content:center;}
+.ci-txt{font-family:'Jost',sans-serif;font-weight:300;font-size:0.78rem;line-height:1.7;color:rgba(245,243,239,0.4);}
+.ci-txt strong{display:block;font-weight:400;font-size:0.63rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.25rem;}
+.wa-btn{display:inline-flex;align-items:center;gap:0.9rem;background:#1a2a1a;border:1px solid rgba(37,211,102,0.22);color:#68d38a;font-family:'Jost',sans-serif;font-weight:300;font-size:0.67rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;padding:0.9rem 1.8rem;margin-top:1.5rem;transition:all 0.4s;}
+.wa-btn:hover{background:rgba(37,211,102,0.08);border-color:rgba(37,211,102,0.45);}
+.soc-row{display:flex;gap:0.9rem;margin-top:1.8rem;}
+.soc-btn{width:40px;height:40px;border:1px solid rgba(184,168,120,0.13);display:flex;align-items:center;justify-content:center;color:rgba(245,243,239,0.28);text-decoration:none;transition:all 0.35s;}
+.soc-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(184,168,120,0.05);}
+/* Event selector */
+.et-lbl{font-family:'Jost',sans-serif;font-weight:200;font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(184,168,120,0.48);margin-bottom:0.8rem;display:block;}
+.et-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;margin-bottom:1.5px;}
+.et-btn{background:var(--card);border:none;padding:0.95rem 1.1rem;font-family:'Jost',sans-serif;font-weight:300;font-size:0.63rem;letter-spacing:0.13em;text-transform:uppercase;color:rgba(245,243,239,0.38);cursor:pointer;transition:all 0.3s;text-align:left;display:flex;align-items:center;gap:0.55rem;}
+.et-btn:hover{background:var(--card2);color:rgba(245,243,239,0.65);}
+.et-btn.active{background:rgba(184,168,120,0.1);color:var(--gold-l);border-left:2px solid var(--gold);}
+.et-btn svg{opacity:0.45;flex-shrink:0;}.et-btn.active svg{opacity:0.9;}
+.fi{width:100%;background:var(--card);border:none;border-bottom:1px solid rgba(184,168,120,0.1);color:var(--white);font-family:'Jost',sans-serif;font-weight:300;font-size:0.8rem;padding:1.1rem 0.8rem 1.1rem 0;outline:none;transition:border-color 0.3s;}
+.fi:focus{border-color:var(--gold);}
+.fi::placeholder{font-family:'Jost',sans-serif;font-weight:200;font-size:0.63rem;letter-spacing:0.13em;text-transform:uppercase;color:rgba(245,243,239,0.17);}
+textarea.fi{resize:none;height:88px;}
+.fg{margin-bottom:1.5px;}
 
-  /* FLOATING WA */
-  .wa-float { position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.35); z-index: 500; text-decoration: none; transition: transform 0.3s; animation: waPulse 2.5s ease-in-out infinite; }
-  .wa-float:hover { transform: scale(1.1); }
-  @keyframes waPulse { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.35); } 50% { box-shadow: 0 4px 30px rgba(37,211,102,0.6), 0 0 0 8px rgba(37,211,102,0.1); } }
+/* FLOATING WA */
+.wa-fw{position:fixed;bottom:2rem;right:2rem;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem;}
+.wa-tip{background:#162216;border:1px solid rgba(37,211,102,0.22);padding:0.6rem 0.9rem;font-family:'Jost',sans-serif;font-weight:300;font-size:0.58rem;letter-spacing:0.1em;color:#68d38a;white-space:nowrap;opacity:0;transform:translateY(5px);transition:all 0.3s;pointer-events:none;}
+.wa-fw:hover .wa-tip{opacity:1;transform:translateY(0);}
+.wa-fb{width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.28);text-decoration:none;transition:transform 0.3s;animation:wap 2.5s ease-in-out infinite;flex-shrink:0;}
+.wa-fb:hover{transform:scale(1.1);}
+@keyframes wap{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.28);}50%{box-shadow:0 4px 28px rgba(37,211,102,0.52),0 0 0 7px rgba(37,211,102,0.07);}}
 
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--anthracite-deep); }
-  ::-webkit-scrollbar-thumb { background: rgba(184,168,120,0.3); }
-  ::selection { background: rgba(184,168,120,0.2); color: var(--white-soft); }
-  @media(max-width:640px) { .section { padding: 5rem 1.5rem; } .hero-cta-wrap { flex-direction: column; width: 100%; } .btn-primary, .btn-ghost { width: 100%; justify-content: center; } }
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid rgba(184,168,120,0.07);padding:3rem 2rem;}
+.ft-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.ft-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;letter-spacing:0.3em;color:var(--gold-l);text-transform:uppercase;}
+.ft-copy{font-family:'Jost',sans-serif;font-weight:200;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,239,0.17);text-align:center;}
+.ft-loc{font-family:'Jost',sans-serif;font-weight:200;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(184,168,120,0.36);text-align:right;}
+@media(max-width:640px){.sec{padding:5rem 1.5rem;}.h-cta{flex-direction:column;width:100%;}.btn-p,.btn-g{width:100%;justify-content:center;}.et-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
+<!-- SIDEBAR -->
+<div class="side-bar">
+  <a href="https://www.instagram.com/vizyoneventdesign" target="_blank" rel="noopener" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+  <a href="https://www.facebook.com/vizyoneventdesign" target="_blank" rel="noopener" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  <a href="#" aria-label="TikTok"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.17a8.18 8.18 0 0 0 4.78 1.52V7.26a4.85 4.85 0 0 1-1.02-.57z"/></svg></a>
+</div>
+
 <!-- NAV -->
-<nav id="mainNav">
+<nav id="nav">
   <div class="nav-logo">Vizyon</div>
   <div class="nav-links" id="navLinks">
     <a href="#services">Hizmetler</a>
     <a href="#gallery">Galeri</a>
-    <a href="#pricing">Fiyatlar</a>
+    <a href="#pricing">Paketler</a>
     <a href="#testimonials">Yorumlar</a>
     <a href="#about">Hakkımızda</a>
     <a href="#contact">İletişim</a>
   </div>
-  <button class="menu-toggle" id="menuToggle" aria-label="Menü">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="menu-toggle" id="mt" aria-label="Menü"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -244,282 +278,210 @@
       <line x1="1440" y1="0" x2="0" y2="900" stroke="#b8a878" stroke-width="0.5"/>
       <circle cx="720" cy="450" r="300" stroke="#b8a878" stroke-width="0.5"/>
       <circle cx="720" cy="450" r="200" stroke="#b8a878" stroke-width="0.5"/>
-      <circle cx="720" cy="450" r="450" stroke="#b8a878" stroke-width="0.3"/>
-      <path d="M60 60 L60 100 M60 60 L100 60" stroke="#b8a878" stroke-width="0.8"/>
-      <path d="M1380 60 L1380 100 M1380 60 L1340 60" stroke="#b8a878" stroke-width="0.8"/>
-      <path d="M60 840 L60 800 M60 840 L100 840" stroke="#b8a878" stroke-width="0.8"/>
-      <path d="M1380 840 L1380 800 M1380 840 L1340 840" stroke="#b8a878" stroke-width="0.8"/>
+      <circle cx="720" cy="450" r="440" stroke="#b8a878" stroke-width="0.3"/>
+      <path d="M60 60L60 100M60 60L100 60M1380 60L1380 100M1380 60L1340 60M60 840L60 800M60 840L100 840M1380 840L1380 800M1380 840L1340 840" stroke="#b8a878" stroke-width="0.8"/>
     </svg>
   </div>
   <div class="grain"></div>
   <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 2rem;">
-    <div class="v-logo-wrap">
-      <div class="v-logo-ring"></div>
-      <div class="v-logo-ring-2"></div>
-      <div class="v-letter">V</div>
-    </div>
-    <p class="hero-eyebrow">Yalova &amp; Kocaeli — Event Design</p>
-    <h1 class="hero-headline">Hayallerinizi <em>geometrik</em><br/>bir gerçeğe dönüştürüyoruz</h1>
-    <p class="hero-sub">Söz · Nişan · Kına · Kurumsal Etkinlikler</p>
-    <div class="hero-cta-wrap">
-      <a href="#contact" class="btn-primary">
-        <span>Teklif Alın</span>
-        <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 4H13M10 1L13 4L10 7" stroke="currentColor" stroke-width="1"/></svg>
-      </a>
-      <a href="#gallery" class="btn-ghost">Portföyü İncele</a>
+    <div class="v-wrap"><div class="vr1"></div><div class="vr2"></div><div class="v-letter">V</div></div>
+    <p class="h-eyebrow">Yalova &amp; Kocaeli — Event Design</p>
+    <h1 class="h-headline"><span id="typedEl"></span><span class="typed-cur" id="typedCur"></span></h1>
+    <p class="h-sub">Söz · Nişan · Kına · Kurumsal Etkinlikler</p>
+    <div class="h-cta">
+      <a href="#contact" class="btn-p"><span>Teklif Alın</span><svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 4H13M10 1L13 4L10 7" stroke="currentColor" stroke-width="1"/></svg></a>
+      <a href="#gallery" class="btn-g">Portföyü İncele</a>
     </div>
   </div>
-  <div class="hero-scroll-hint">
-    <span>Keşfet</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="h-scroll"><span>Keşfet</span><div class="scroll-line"></div></div>
 </section>
 
 <!-- SERVICES -->
-<section class="section" id="services">
-  <div class="section-inner">
-    <div class="reveal">
-      <p class="section-label">Hizmetlerimiz</p>
-      <h2 class="section-title">Her Anın <em>Sanatı</em></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">01</div>
-        <svg class="service-icon" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#b8a878" stroke-width="0.8"/><path d="M21 7L21 35M7 21H35" stroke="#b8a878" stroke-width="0.8"/><circle cx="21" cy="21" r="4" stroke="#b8a878" stroke-width="0.8"/></svg>
-        <h3 class="service-title">Söz &amp; Nişan</h3>
-        <p class="service-subtitle">Nişan Organizasyonu</p>
-        <p class="service-desc">Ailenizin ve sevdiklerinizin tanıklığında en özel anınızı; özel dekor tasarımı, tematik masa düzeni ve kusursuz bir koordinasyon ile taçlandırıyoruz.</p>
-        <div class="service-arrow">Detaylar <svg width="18" height="8" viewBox="0 0 18 8" fill="none"><path d="M1 4H17M14 1L17 4L14 7" stroke="currentColor" stroke-width="0.8"/></svg></div>
+<section class="sec" id="services">
+  <div class="sec-in">
+    <div class="reveal"><p class="sec-lbl">Hizmetlerimiz</p><h2 class="sec-title">Her Anın <em>Sanatı</em></h2><div class="div"></div></div>
+    <div class="svc-grid">
+      <div class="svc-card reveal rd1">
+        <div class="svc-num">01</div>
+        <svg class="svc-icon" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#b8a878" stroke-width="0.8"/><path d="M21 7L21 35M7 21H35" stroke="#b8a878" stroke-width="0.8"/><circle cx="21" cy="21" r="4" stroke="#b8a878" stroke-width="0.8"/></svg>
+        <h3 class="svc-title">Söz &amp; Nişan</h3><p class="svc-sub">Nişan Organizasyonu</p>
+        <p class="svc-desc">Ailenizin ve sevdiklerinizin tanıklığında en özel anınızı; özel dekor tasarımı, tematik masa düzeni ve kusursuz koordinasyon ile taçlandırıyoruz.</p>
+        <div class="svc-arr">Detaylar <svg width="18" height="8" viewBox="0 0 18 8" fill="none"><path d="M1 4H17M14 1L17 4L14 7" stroke="currentColor" stroke-width="0.8"/></svg></div>
       </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">02</div>
-        <svg class="service-icon" viewBox="0 0 42 42" fill="none"><rect x="1" y="1" width="40" height="40" stroke="#b8a878" stroke-width="0.8"/><rect x="8" y="8" width="26" height="26" stroke="#b8a878" stroke-width="0.5"/><path d="M1 1L21 21L41 1M1 41L21 21L41 41" stroke="#b8a878" stroke-width="0.5"/></svg>
-        <h3 class="service-title">Modern Kına</h3>
-        <p class="service-subtitle">Kına Gecesi Organizasyonu</p>
-        <p class="service-desc">Geleneksel ritüelleri çağdaş bir estetikle harmanlıyoruz. Minimalist süslemeler, özel ışık tasarımı ve canlı performanslarla unutulmaz bir gece yaratıyoruz.</p>
-        <div class="service-arrow">Detaylar <svg width="18" height="8" viewBox="0 0 18 8" fill="none"><path d="M1 4H17M14 1L17 4L14 7" stroke="currentColor" stroke-width="0.8"/></svg></div>
+      <div class="svc-card reveal rd2">
+        <div class="svc-num">02</div>
+        <svg class="svc-icon" viewBox="0 0 42 42" fill="none"><rect x="1" y="1" width="40" height="40" stroke="#b8a878" stroke-width="0.8"/><rect x="8" y="8" width="26" height="26" stroke="#b8a878" stroke-width="0.5"/><path d="M1 1L21 21L41 1M1 41L21 21L41 41" stroke="#b8a878" stroke-width="0.5"/></svg>
+        <h3 class="svc-title">Modern Kına</h3><p class="svc-sub">Kına Gecesi Organizasyonu</p>
+        <p class="svc-desc">Geleneksel ritüelleri çağdaş estetikle harmanlıyoruz. Minimalist süslemeler, özel ışık tasarımı ve canlı performanslarla unutulmaz bir gece.</p>
+        <div class="svc-arr">Detaylar <svg width="18" height="8" viewBox="0 0 18 8" fill="none"><path d="M1 4H17M14 1L17 4L14 7" stroke="currentColor" stroke-width="0.8"/></svg></div>
       </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-num">03</div>
-        <svg class="service-icon" viewBox="0 0 42 42" fill="none"><polygon points="21,2 40,12 40,30 21,40 2,30 2,12" stroke="#b8a878" stroke-width="0.8" fill="none"/><polygon points="21,10 32,16 32,26 21,32 10,26 10,16" stroke="#b8a878" stroke-width="0.5" fill="none"/><circle cx="21" cy="21" r="4" stroke="#b8a878" stroke-width="0.8"/></svg>
-        <h3 class="service-title">Kurumsal</h3>
-        <p class="service-subtitle">Corporate Events</p>
-        <p class="service-desc">Marka kimliğinizi yansıtan, ölçeklenebilir kurumsal etkinlikler, ödül törenleri, lansman organizasyonları ve konferans tasarımları sunuyoruz.</p>
-        <div class="service-arrow">Detaylar <svg width="18" height="8" viewBox="0 0 18 8" fill="none"><path d="M1 4H17M14 1L17 4L14 7" stroke="currentColor" stroke-width="0.8"/></svg></div>
+      <div class="svc-card reveal rd3">
+        <div class="svc-num">03</div>
+        <svg class="svc-icon" viewBox="0 0 42 42" fill="none"><polygon points="21,2 40,12 40,30 21,40 2,30 2,12" stroke="#b8a878" stroke-width="0.8" fill="none"/><polygon points="21,10 32,16 32,26 21,32 10,26 10,16" stroke="#b8a878" stroke-width="0.5" fill="none"/><circle cx="21" cy="21" r="4" stroke="#b8a878" stroke-width="0.8"/></svg>
+        <h3 class="svc-title">Kurumsal</h3><p class="svc-sub">Corporate Events</p>
+        <p class="svc-desc">Marka kimliğinizi yansıtan ölçeklenebilir kurumsal etkinlikler, ödül törenleri, lansman organizasyonları ve konferans tasarımları.</p>
+        <div class="svc-arr">Detaylar <svg width="18" height="8" viewBox="0 0 18 8" fill="none"><path d="M1 4H17M14 1L17 4L14 7" stroke="currentColor" stroke-width="0.8"/></svg></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="section" id="gallery">
-  <div class="section-inner">
-    <div class="gallery-header reveal">
-      <div>
-        <p class="section-label">Portföy</p>
-        <h2 class="section-title">Seçki <em>Çalışmalar</em></h2>
-      </div>
-      <a href="#contact" class="btn-ghost" style="flex-shrink:0;">Tümünü Gör</a>
+<!-- GALLERY MOODBOARD -->
+<section class="sec" id="gallery">
+  <div class="sec-in">
+    <div class="gal-hdr reveal">
+      <div><p class="sec-lbl">Portföy &amp; Moodboard</p><h2 class="sec-title">Seçki <em>Çalışmalar</em></h2></div>
+      <a href="#contact" class="btn-g" style="flex-shrink:0;">Tümünü Gör</a>
     </div>
-    <div class="gallery-grid reveal">
-      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-placeholder"><div class="gallery-geo"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#b8a878" stroke-width="0.6"/><path d="M40 2L40 78M2 40H78M14 14L66 66M66 14L14 66" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><div class="gallery-overlay"><span class="gallery-tag">Nişan — 2024</span></div></div></div>
-      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-placeholder"><div class="gallery-geo"><svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="1" y="1" width="58" height="58" stroke="#b8a878" stroke-width="0.6"/><path d="M1 1L59 59M59 1L1 59" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><div class="gallery-overlay"><span class="gallery-tag">Kına — 2024</span></div></div></div>
-      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-placeholder"><div class="gallery-geo"><svg width="70" height="70" viewBox="0 0 70 70" fill="none"><polygon points="35,2 68,18 68,52 35,68 2,52 2,18" stroke="#b8a878" stroke-width="0.6" fill="none"/><polygon points="35,14 56,24 56,46 35,56 14,46 14,24" stroke="#b8a878" stroke-width="0.4" fill="none"/></svg></div></div><div class="gallery-overlay"><span class="gallery-tag">Kurumsal — 2025</span></div></div></div>
-      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-placeholder"><div class="gallery-geo"><svg width="65" height="65" viewBox="0 0 65 65" fill="none"><circle cx="32.5" cy="32.5" r="30" stroke="#b8a878" stroke-width="0.6"/><polygon points="32.5,4 60.5,20 60.5,45 32.5,61 4.5,45 4.5,20" stroke="#b8a878" stroke-width="0.4" fill="none"/></svg></div></div><div class="gallery-overlay"><span class="gallery-tag">Söz — 2025</span></div></div></div>
-      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-placeholder"><div class="gallery-geo"><svg width="75" height="75" viewBox="0 0 75 75" fill="none"><path d="M37.5 2L73 56H2L37.5 2Z" stroke="#b8a878" stroke-width="0.6" fill="none"/></svg></div></div><div class="gallery-overlay"><span class="gallery-tag">Nişan — 2025</span></div></div></div>
-      <div class="gallery-item"><div class="gallery-item-inner"><div class="gallery-placeholder"><div class="gallery-geo"><svg width="68" height="68" viewBox="0 0 68 68" fill="none"><rect x="1" y="1" width="66" height="66" stroke="#b8a878" stroke-width="0.6"/><circle cx="34" cy="34" r="25" stroke="#b8a878" stroke-width="0.5"/></svg></div></div><div class="gallery-overlay"><span class="gallery-tag">Kurumsal — 2025</span></div></div></div>
+    <div class="gal-grid reveal">
+      <div class="gi"><div class="gi-in"><div class="gi-bg"><div class="gi-geo"><svg width="78" height="78" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" stroke="#b8a878" stroke-width="0.6"/><path d="M40 2L40 78M2 40H78M14 14L66 66M66 14L14 66" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><div class="gi-ov"><div class="gi-concept">Minimalist Gold</div><div class="gi-tag">Nişan — Yalova, 2024</div><div class="gi-swatches"><div class="sw" style="background:#d4c49a;"></div><div class="sw" style="background:#2a2720;"></div><div class="sw" style="background:#f5f3ef;"></div></div></div></div></div>
+      <div class="gi"><div class="gi-in"><div class="gi-bg"><div class="gi-geo"><svg width="58" height="58" viewBox="0 0 60 60" fill="none"><rect x="1" y="1" width="58" height="58" stroke="#b8a878" stroke-width="0.6"/><path d="M1 1L59 59M59 1L1 59" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><div class="gi-ov"><div class="gi-concept">Sage Ceremony</div><div class="gi-tag">Kına Gecesi — 2024</div><div class="gi-swatches"><div class="sw" style="background:#7a9e7e;"></div><div class="sw" style="background:#1c2018;"></div><div class="sw" style="background:#e8e0d0;"></div></div></div></div></div>
+      <div class="gi"><div class="gi-in"><div class="gi-bg"><div class="gi-geo"><svg width="68" height="68" viewBox="0 0 70 70" fill="none"><polygon points="35,2 68,18 68,52 35,68 2,52 2,18" stroke="#b8a878" stroke-width="0.6" fill="none"/><polygon points="35,14 56,24 56,46 35,56 14,46 14,24" stroke="#b8a878" stroke-width="0.4" fill="none"/></svg></div></div><div class="gi-ov"><div class="gi-concept">Royal Anthracite</div><div class="gi-tag">Kurumsal — Kocaeli, 2025</div><div class="gi-swatches"><div class="sw" style="background:#2c2c2c;"></div><div class="sw" style="background:#b8a878;"></div><div class="sw" style="background:#fff;"></div></div></div></div></div>
+      <div class="gi"><div class="gi-in"><div class="gi-bg"><div class="gi-geo"><svg width="63" height="63" viewBox="0 0 65 65" fill="none"><circle cx="32.5" cy="32.5" r="30" stroke="#b8a878" stroke-width="0.6"/><polygon points="32.5,4 60.5,20 60.5,45 32.5,61 4.5,45 4.5,20" stroke="#b8a878" stroke-width="0.4" fill="none"/></svg></div></div><div class="gi-ov"><div class="gi-concept">Midnight Blue</div><div class="gi-tag">Söz Töreni — 2025</div><div class="gi-swatches"><div class="sw" style="background:#1a1c22;"></div><div class="sw" style="background:#4a6fa5;"></div><div class="sw" style="background:#c8d8e8;"></div></div></div></div></div>
+      <div class="gi"><div class="gi-in"><div class="gi-bg"><div class="gi-geo"><svg width="73" height="73" viewBox="0 0 75 75" fill="none"><path d="M37.5 2L73 56H2L37.5 2Z" stroke="#b8a878" stroke-width="0.6" fill="none"/></svg></div></div><div class="gi-ov"><div class="gi-concept">Warm Ivory</div><div class="gi-tag">Nişan — Yalova, 2025</div><div class="gi-swatches"><div class="sw" style="background:#f5efe0;"></div><div class="sw" style="background:#c9a86c;"></div><div class="sw" style="background:#8b6914;"></div></div></div></div></div>
+      <div class="gi"><div class="gi-in"><div class="gi-bg"><div class="gi-geo"><svg width="66" height="66" viewBox="0 0 68 68" fill="none"><rect x="1" y="1" width="66" height="66" stroke="#b8a878" stroke-width="0.6"/><circle cx="34" cy="34" r="25" stroke="#b8a878" stroke-width="0.5"/></svg></div></div><div class="gi-ov"><div class="gi-concept">Dusk Marble</div><div class="gi-tag">Kurumsal — 2025</div><div class="gi-swatches"><div class="sw" style="background:#1e1c20;"></div><div class="sw" style="background:#9c8fa0;"></div><div class="sw" style="background:#e8dce8;"></div></div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- QUOTE -->
 <div class="quote-band reveal">
-  <span class="quote-mark">"</span>
-  <p class="quote-text">Her etkinlik, bir mimarinin hikayesidir. Biz o mimariyi sizin için inşa ediyoruz.</p>
-  <p class="quote-attr">Vizyon Event Design</p>
+  <span class="qm">"</span>
+  <p class="qt">Her etkinlik, bir mimarinin hikayesidir. Biz o mimariyi sizin için inşa ediyoruz.</p>
+  <p class="qa">Vizyon Event Design</p>
 </div>
 
 <!-- ABOUT -->
-<section class="section" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-visual reveal">
-        <div class="about-block about-block-1"><span class="about-monogram">VED</span></div>
-        <div class="about-block about-block-2"><div class="about-stat"><span class="about-stat-num">200+</span><span class="about-stat-label">Etkinlik</span></div></div>
-        <div class="about-block about-block-3"></div>
+<section class="sec" id="about">
+  <div class="ab-parallax" id="abPx"></div>
+  <div class="sec-in">
+    <div class="ab-grid">
+      <div class="ab-vis reveal">
+        <div class="ab-blk ab-blk1"><span class="ab-mono">VED</span></div>
+        <div class="ab-blk ab-blk2"><div class="ab-stat"><span class="ab-num">200+</span><span class="ab-lbl">Etkinlik</span></div></div>
+        <div class="ab-blk ab-blk3"></div>
       </div>
-      <div class="about-text reveal reveal-delay-1">
-        <p class="section-label">Hakkımızda</p>
-        <h2 class="section-title">Hayalleri <em>Geometrik</em><br/>Gerçeğe Taşıyoruz</h2>
-        <div class="divider"></div>
+      <div class="ab-txt reveal rd1">
+        <p class="sec-lbl">Hakkımızda</p><h2 class="sec-title">Hayalleri <em>Geometrik</em><br/>Gerçeğe Taşıyoruz</h2><div class="div"></div>
         <p>Vizyon Event Design olarak, <strong>Yalova ve Kocaeli'nin</strong> en seçkin etkinlik tasarım stüdyosuyuz. Minimalist estetik anlayışımız ve titiz organizasyon süreçlerimizle her etkinliği birer sanat eserine dönüştürüyoruz.</p>
         <p>Söz töreninden kurumsal lansmanına; her ölçekteki etkinlikte <strong>görsel kimliği, mekan tasarımını ve koordinasyonu</strong> bütüncül bir vizyonla ele alıyoruz.</p>
-        <div class="about-values">
-          <span class="about-value">Minimalist Tasarım</span>
-          <span class="about-value">Titiz Koordinasyon</span>
-          <span class="about-value">Kişisel Dokunuş</span>
-        </div>
-        <div style="margin-top:2.5rem;"><a href="#contact" class="btn-primary"><span>Bizimle Çalışın</span></a></div>
+        <div class="ab-vals"><span class="ab-val">Minimalist Tasarım</span><span class="ab-val">Titiz Koordinasyon</span><span class="ab-val">Kişisel Dokunuş</span></div>
+        <div style="margin-top:2.5rem;"><a href="#contact" class="btn-p"><span>Bizimle Çalışın</span></a></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="section" id="pricing">
-  <div class="section-inner">
+<section class="sec" id="pricing">
+  <div class="sec-in">
     <div class="reveal">
-      <p class="section-label">Fiyatlandırma</p>
-      <h2 class="section-title">Şeffaf &amp; <em>Adil</em> Fiyatlar</h2>
-      <div class="divider"></div>
+      <p class="sec-lbl">Paketler</p><h2 class="sec-title">Silver · Gold · <em>Platinum</em></h2><div class="div"></div>
+      <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.7rem;color:rgba(245,243,239,0.35);line-height:1.8;max-width:500px;margin-bottom:1rem;">Kartın üzerine gelerek paket detaylarını görüntüleyebilirsiniz. Her organizasyon kendine özgüdür — ücretsiz keşif için iletişime geçin.</p>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-card reveal reveal-delay-1">
-        <p class="pricing-name">Başlangıç</p>
-        <h3 class="pricing-title">Söz &amp; Nişan</h3>
-        <div class="pricing-price">₺15.000 <span>den başlayan</span></div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Mekan dekor tasarımı</li>
-          <li>Masa &amp; çiçek düzeni</li>
-          <li>Işık tasarımı</li>
-          <li>Koordinasyon (4 saat)</li>
-          <li>Fotoğraf köşesi kurulumu</li>
-        </ul>
-        <a href="#contact" class="btn-ghost" style="width:100%;justify-content:center;display:inline-flex;">Teklif Al</a>
+    <div class="pkg-grid">
+      <div class="pkg-card reveal rd1">
+        <div class="pkg-front">
+          <p class="pkg-tier">— Silver —</p><h3 class="pkg-name">Sadece Dekor</h3>
+          <p class="pkg-note">seçeneklerle başlayan fiyatlar</p><div class="pkg-price">₺12.000</div>
+          <p class="pkg-teaser">Mekan dekorasyonu, masa düzeni ve temel ışık tasarımı. Kalabalık olmayan etkinlikler için ideal başlangıç.</p>
+          <span class="pkg-hint">Detay için üzerine gel →</span>
+        </div>
+        <div class="pkg-back">
+          <div><p class="pkg-tier" style="margin-bottom:0.5rem;">— Silver Paket —</p><p class="pkg-price" style="margin-bottom:1.2rem;">₺12.000'den başlayan</p>
+          <ul class="pkg-feats"><li>Mekan dekor tasarımı</li><li>Tematik masa &amp; çiçek düzeni</li><li>Temel ışık tasarımı</li><li>Koordinasyon (4 saat)</li><li>Fotoğraf köşesi kurulumu</li></ul></div>
+          <a href="#contact" class="btn-g" style="width:100%;justify-content:center;display:inline-flex;">Teklif Al</a>
+        </div>
       </div>
-      <div class="pricing-card featured reveal reveal-delay-2">
-        <p class="pricing-name">En Popüler</p>
-        <h3 class="pricing-title">Modern Kına</h3>
-        <div class="pricing-price">₺20.000 <span>den başlayan</span></div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Tam mekan dönüşümü</li>
-          <li>Özel tematik dekor</li>
-          <li>Profesyonel ışık &amp; müzik</li>
-          <li>Kına töreni koordinasyonu</li>
-          <li>Misafir karşılama organizasyonu</li>
-          <li>Fotoğraf &amp; video köşesi</li>
-        </ul>
-        <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;display:inline-flex;"><span>Teklif Al</span></a>
+      <div class="pkg-card gold-p reveal rd2">
+        <div class="pkg-front">
+          <p class="pkg-tier">— Gold —</p><h3 class="pkg-name">Dekor + Masa</h3>
+          <p class="pkg-note">seçeneklerle başlayan fiyatlar</p><div class="pkg-price">₺22.000</div>
+          <p class="pkg-teaser">Kapsamlı dekor, masa tasarımı ve etkinlik koordinasyonu. En çok tercih edilen paketimiz.</p>
+          <span class="pkg-hint">Detay için üzerine gel →</span>
+        </div>
+        <div class="pkg-back">
+          <div><p class="pkg-tier" style="margin-bottom:0.5rem;">— Gold Paket —</p><p class="pkg-price" style="margin-bottom:1.2rem;">₺22.000'den başlayan</p>
+          <ul class="pkg-feats"><li>Silver paket dahil</li><li>Premium çiçek &amp; aksesuar</li><li>Profesyonel ışık &amp; atmosfer</li><li>Tam gün koordinasyon</li><li>Misafir karşılama</li><li>Fotoğraf &amp; video köşesi</li></ul></div>
+          <a href="#contact" class="btn-p" style="width:100%;justify-content:center;display:inline-flex;"><span>Teklif Al</span></a>
+        </div>
       </div>
-      <div class="pricing-card reveal reveal-delay-3">
-        <p class="pricing-name">Kurumsal</p>
-        <h3 class="pricing-title">Corporate</h3>
-        <div class="pricing-price">₺30.000 <span>den başlayan</span></div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li>Marka kimliği entegrasyonu</li>
-          <li>Tam etkinlik yönetimi</li>
-          <li>Teknik ekipman &amp; sahne</li>
-          <li>Catering koordinasyonu</li>
-          <li>7/24 iletişim desteği</li>
-        </ul>
-        <a href="#contact" class="btn-ghost" style="width:100%;justify-content:center;display:inline-flex;">Teklif Al</a>
+      <div class="pkg-card reveal rd3">
+        <div class="pkg-front">
+          <p class="pkg-tier">— Platinum —</p><h3 class="pkg-name">Tam Hizmet</h3>
+          <p class="pkg-note">seçeneklerle başlayan fiyatlar</p><div class="pkg-price">₺38.000</div>
+          <p class="pkg-teaser">Konsept geliştirmeden son detaya kadar her şey dahil. Siz sadece tadını çıkarın.</p>
+          <span class="pkg-hint">Detay için üzerine gel →</span>
+        </div>
+        <div class="pkg-back">
+          <div><p class="pkg-tier" style="margin-bottom:0.5rem;">— Platinum Paket —</p><p class="pkg-price" style="margin-bottom:1.2rem;">₺38.000'den başlayan</p>
+          <ul class="pkg-feats"><li>Gold paket dahil</li><li>Özel konsept &amp; moodboard</li><li>Catering koordinasyonu</li><li>Teknik ekipman &amp; sahne</li><li>7/24 destek hattı</li><li>Etkinlik sonrası rapor</li></ul></div>
+          <a href="#contact" class="btn-g" style="width:100%;justify-content:center;display:inline-flex;">Teklif Al</a>
+        </div>
       </div>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:2rem;font-family:'Jost',sans-serif;font-weight:200;font-size:0.65rem;letter-spacing:0.2em;color:rgba(245,243,239,0.25);text-transform:uppercase;">* Fiyatlar etkinlik büyüklüğüne göre değişmektedir. Ücretsiz keşif için iletişime geçin.</p>
+    <p class="reveal" style="text-align:center;margin-top:2rem;font-family:'Jost',sans-serif;font-weight:200;font-size:0.6rem;letter-spacing:0.18em;color:rgba(245,243,239,0.18);text-transform:uppercase;">* Fiyatlar etkinlik ölçeği ve lokasyona göre değişmektedir. Ücretsiz keşif görüşmesi için iletişime geçin.</p>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section" id="testimonials">
-  <div class="section-inner">
-    <div class="reveal">
-      <p class="section-label">Müşteri Yorumları</p>
-      <h2 class="section-title">Onların <em>Hikayesi</em></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal reveal-delay-1">
-        <span class="t-quote">"</span>
-        <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testimonial-text">Nişan gecemiz hayallerimizin çok ötesindeydi. Her detay özenle düşünülmüştü. Misafirlerimiz hâlâ o geceden bahsediyor.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">E</div>
-          <div><div class="testimonial-name">Elif &amp; Mert</div><div class="testimonial-event">Nişan — Yalova, 2024</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-2">
-        <span class="t-quote">"</span>
-        <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testimonial-text">Modern kına gecesi organizasyonumuz mükemmeldi. Geleneksel ile modernin bu kadar güzel harmanlanabileceğini görünce inanamadık.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">S</div>
-          <div><div class="testimonial-name">Selin Arslan</div><div class="testimonial-event">Kına Gecesi — Kocaeli, 2024</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-3">
-        <span class="t-quote">"</span>
-        <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testimonial-text">Şirketimizin yıl sonu etkinliğini Vizyon'a emanet ettik. Profesyonellik ve estetik anlayışları rakipsiz. Kesinlikle tekrar çalışacağız.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">K</div>
-          <div><div class="testimonial-name">Kemal Yıldız</div><div class="testimonial-event">Kurumsal Etkinlik — Kocaeli, 2025</div></div>
-        </div>
-      </div>
+<!-- TESTIMONIALS MARQUEE -->
+<section class="sec" id="testimonials" style="padding-bottom:2rem;">
+  <div class="sec-in reveal">
+    <p class="sec-lbl">Müşteri Hikayeleri</p><h2 class="sec-title">Onların <em>Sesi</em></h2><div class="div"></div>
+  </div>
+  <div class="mq-wrap reveal">
+    <div class="mq-track" id="mqt">
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp1"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#b8a878" stroke-width="0.6"/><path d="M20 2L20 38M2 20H38" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><span class="tc-plbl">Nişan Dekoru · Yalova</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Nişan gecemiz hayallerimizin çok ötesindeydi. Her detay özenle düşünülmüştü. Misafirlerimiz hâlâ o geceden bahsediyor.</p><div class="tc-author"><div class="tc-av">E</div><div><div class="tc-name">Elif &amp; Mert</div><div class="tc-event">Nişan — Yalova, 2024</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp2"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><rect x="1" y="1" width="38" height="38" stroke="#b8a878" stroke-width="0.6"/><path d="M1 1L39 39M39 1L1 39" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><span class="tc-plbl">Kına Gecesi · Kocaeli</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Modern kına gecesi organizasyonumuz mükemmeldi. Geleneksel ile modernin bu kadar güzel harmanlanabileceğini görünce inanamadık.</p><div class="tc-author"><div class="tc-av">S</div><div><div class="tc-name">Selin Arslan</div><div class="tc-event">Kına — Kocaeli, 2024</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp3"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="#b8a878" stroke-width="0.6" fill="none"/></svg></div></div><span class="tc-plbl">Kurumsal Etkinlik · 2025</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Şirketimizin yıl sonu etkinliğini Vizyon'a emanet ettik. Profesyonellik ve estetik anlayışları rakipsiz. Kesinlikle tekrar çalışacağız.</p><div class="tc-author"><div class="tc-av">K</div><div><div class="tc-name">Kemal Yıldız</div><div class="tc-event">Kurumsal — Kocaeli, 2025</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp4"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#b8a878" stroke-width="0.6"/><circle cx="20" cy="20" r="8" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><span class="tc-plbl">Söz Töreni · Yalova</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Söz törenimizin her anı sihir gibiydi. Mekan tasarımı tam istediğimiz gibiydi, hatta daha da güzeldi. Teşekkürler Vizyon!</p><div class="tc-author"><div class="tc-av">A</div><div><div class="tc-name">Ayşe &amp; Can</div><div class="tc-event">Söz — Yalova, 2025</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp5"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><path d="M20 2L38 30H2L20 2Z" stroke="#b8a878" stroke-width="0.6" fill="none"/></svg></div></div><span class="tc-plbl">Nişan Dekor · 2025</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Platinum paketi seçtik ve hiç pişman olmadık. Sabahtan akşama her detayla ilgilendiler, biz sadece anın tadını çıkardık.</p><div class="tc-author"><div class="tc-av">M</div><div><div class="tc-name">Merve &amp; Burak</div><div class="tc-event">Nişan — Kocaeli, 2025</div></div></div></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp1"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#b8a878" stroke-width="0.6"/><path d="M20 2L20 38M2 20H38" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><span class="tc-plbl">Nişan Dekoru · Yalova</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Nişan gecemiz hayallerimizin çok ötesindeydi. Her detay özenle düşünülmüştü. Misafirlerimiz hâlâ o geceden bahsediyor.</p><div class="tc-author"><div class="tc-av">E</div><div><div class="tc-name">Elif &amp; Mert</div><div class="tc-event">Nişan — Yalova, 2024</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp2"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><rect x="1" y="1" width="38" height="38" stroke="#b8a878" stroke-width="0.6"/><path d="M1 1L39 39M39 1L1 39" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><span class="tc-plbl">Kına Gecesi · Kocaeli</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Modern kına gecesi organizasyonumuz mükemmeldi. Geleneksel ile modernin bu kadar güzel harmanlanabileceğini görünce inanamadık.</p><div class="tc-author"><div class="tc-av">S</div><div><div class="tc-name">Selin Arslan</div><div class="tc-event">Kına — Kocaeli, 2024</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp3"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><polygon points="20,2 38,11 38,29 20,38 2,29 2,11" stroke="#b8a878" stroke-width="0.6" fill="none"/></svg></div></div><span class="tc-plbl">Kurumsal Etkinlik · 2025</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Şirketimizin yıl sonu etkinliğini Vizyon'a emanet ettik. Profesyonellik ve estetik anlayışları rakipsiz. Kesinlikle tekrar çalışacağız.</p><div class="tc-author"><div class="tc-av">K</div><div><div class="tc-name">Kemal Yıldız</div><div class="tc-event">Kurumsal — Kocaeli, 2025</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp4"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#b8a878" stroke-width="0.6"/><circle cx="20" cy="20" r="8" stroke="#b8a878" stroke-width="0.4"/></svg></div></div><span class="tc-plbl">Söz Töreni · Yalova</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Söz törenimizin her anı sihir gibiydi. Mekan tasarımı tam istediğimiz gibiydi, hatta daha da güzeldi. Teşekkürler Vizyon!</p><div class="tc-author"><div class="tc-av">A</div><div><div class="tc-name">Ayşe &amp; Can</div><div class="tc-event">Söz — Yalova, 2025</div></div></div></div>
+      <div class="tc"><span class="tq">"</span><div class="tc-photo tp5"><div class="tc-photo-in"><div class="tc-pico"><svg width="38" height="38" viewBox="0 0 40 40" fill="none"><path d="M20 2L38 30H2L20 2Z" stroke="#b8a878" stroke-width="0.6" fill="none"/></svg></div></div><span class="tc-plbl">Nişan Dekor · 2025</span></div><div class="tc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tc-text">Platinum paketi seçtik ve hiç pişman olmadık. Sabahtan akşama her detayla ilgilendiler, biz sadece anın tadını çıkardık.</p><div class="tc-author"><div class="tc-av">M</div><div><div class="tc-name">Merve &amp; Burak</div><div class="tc-event">Nişan — Kocaeli, 2025</div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="section-inner">
-    <div class="reveal">
-      <p class="section-label">İletişim</p>
-      <h2 class="section-title">Projenizi <em>Konuşalım</em></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="contact-grid">
-      <div class="reveal reveal-delay-1">
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#b8a878"/></svg></div>
-          <div class="contact-info-text"><strong>Hizmet Bölgeleri</strong>Yalova &amp; Kocaeli, Türkiye<br/>Çevre illerde hizmet verilebilmektedir.</div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 10.5c-1 0-2-.2-2.9-.5a.9.9 0 0 0-.9.2L7.7 11.7A10.8 10.8 0 0 1 4.3 8.3l1.5-1.5a.9.9 0 0 0 .2-.9C5.7 5 5.5 4 5.5 3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1c0 6.1 4.9 11 11 11a1 1 0 0 0 1-1v-1.5a1 1 0 0 0-1-1z" fill="#b8a878"/></svg></div>
-          <div class="contact-info-text"><strong>WhatsApp</strong>+90 534 744 41 39<br/>Pazartesi – Cumartesi, 09:00–19:00</div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM8 9 2.5 5h11L8 9zm-6 4V6l6 4 6-4v7H2z" fill="#b8a878"/></svg></div>
-          <div class="contact-info-text"><strong>E-Posta</strong>info@vizyoneventdesign.com.tr</div>
-        </div>
-        <a href="https://wa.me/905347444139" class="wa-btn" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#68d38a"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          WhatsApp'tan Yazın
-        </a>
-        <div class="social-row">
-          <a href="https://www.instagram.com/vizyoneventdesign" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/vizyoneventdesign" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="TikTok" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.17a8.18 8.18 0 0 0 4.78 1.52V7.26a4.85 4.85 0 0 1-1.02-.57z"/></svg>
-          </a>
+<section class="sec" id="contact">
+  <div class="sec-in">
+    <div class="reveal"><p class="sec-lbl">İletişim</p><h2 class="sec-title">Projenizi <em>Konuşalım</em></h2><div class="div"></div></div>
+    <div class="ct-grid">
+      <div class="reveal rd1">
+        <div class="ci-item"><div class="ci-ico"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3.5z" fill="#b8a878"/></svg></div><div class="ci-txt"><strong>Hizmet Bölgeleri</strong>Yalova &amp; Kocaeli, Türkiye<br/>Çevre illerde de hizmet verilebilmektedir.</div></div>
+        <div class="ci-item"><div class="ci-ico"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 10.5c-1 0-2-.2-2.9-.5a.9.9 0 0 0-.9.2L7.7 11.7A10.8 10.8 0 0 1 4.3 8.3l1.5-1.5a.9.9 0 0 0 .2-.9C5.7 5 5.5 4 5.5 3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1c0 6.1 4.9 11 11 11a1 1 0 0 0 1-1v-1.5a1 1 0 0 0-1-1z" fill="#b8a878"/></svg></div><div class="ci-txt"><strong>WhatsApp</strong>+90 534 744 41 39<br/>Pzt–Cmt, 09:00–19:00</div></div>
+        <div class="ci-item"><div class="ci-ico"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM8 9 2.5 5h11L8 9zm-6 4V6l6 4 6-4v7H2z" fill="#b8a878"/></svg></div><div class="ci-txt"><strong>E-Posta</strong>info@vizyoneventdesign.com.tr</div></div>
+        <a href="https://wa.me/905347444139" class="wa-btn" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="#68d38a"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>WhatsApp'tan Yazın</a>
+        <div class="soc-row">
+          <a href="https://www.instagram.com/vizyoneventdesign" class="soc-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+          <a href="https://www.facebook.com/vizyoneventdesign" class="soc-btn" aria-label="Facebook" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="soc-btn" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.17a8.18 8.18 0 0 0 4.78 1.52V7.26a4.85 4.85 0 0 1-1.02-.57z"/></svg></a>
         </div>
       </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-group"><input type="text" class="form-input" placeholder="Adınız Soyadınız"/></div>
-        <div class="form-group"><input type="tel" class="form-input" placeholder="Telefon"/></div>
-        <div class="form-group"><input type="email" class="form-input" placeholder="E-Posta"/></div>
-        <div class="form-group">
-          <select class="form-input" style="appearance:none;">
-            <option value="" disabled selected style="background:#1d1d1d;">Etkinlik Türü</option>
-            <option style="background:#1d1d1d;">Söz / Nişan</option>
-            <option style="background:#1d1d1d;">Kına Gecesi</option>
-            <option style="background:#1d1d1d;">Kurumsal Etkinlik</option>
-            <option style="background:#1d1d1d;">Diğer</option>
-          </select>
+      <div class="reveal rd2">
+        <span class="et-lbl">Hayalindeki etkinliği seç:</span>
+        <div class="et-grid">
+          <button class="et-btn" data-t="Söz / Nişan"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="0.8"/></svg>Söz / Nişan</button>
+          <button class="et-btn" data-t="Kına Gecesi"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" stroke="currentColor" stroke-width="0.8"/></svg>Kına Gecesi</button>
+          <button class="et-btn" data-t="Kurumsal"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><polygon points="7,1 13,4 13,10 7,13 1,10 1,4" stroke="currentColor" stroke-width="0.8" fill="none"/></svg>Kurumsal</button>
+          <button class="et-btn" data-t="Diğer"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="0.8"/><path d="M7 4v3M7 9.5v.5" stroke="currentColor" stroke-width="1"/></svg>Diğer</button>
         </div>
-        <div class="form-group"><textarea class="form-input" placeholder="Etkinliğinizi kısaca anlatın..."></textarea></div>
+        <input type="hidden" id="selType" value=""/>
         <div style="margin-top:1.5px;">
-          <button type="button" class="btn-primary" style="width:100%;justify-content:center;">
-            <span>Teklif Talep Et</span>
-            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 4H13M10 1L13 4L10 7" stroke="currentColor" stroke-width="1"/></svg>
-          </button>
+          <div class="fg"><input type="text" class="fi" id="fN" placeholder="Adınız Soyadınız"/></div>
+          <div class="fg"><input type="tel" class="fi" id="fP" placeholder="Telefon"/></div>
+          <div class="fg"><input type="email" class="fi" id="fE" placeholder="E-Posta"/></div>
+          <div class="fg"><textarea class="fi" id="fM" placeholder="Etkinliğinizi kısaca anlatın..."></textarea></div>
+          <div style="margin-top:1.5px;">
+            <button type="button" class="btn-p" id="subBtn" style="width:100%;justify-content:center;">
+              <span>Teklif Talep Et</span>
+              <svg width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M1 4H13M10 1L13 4L10 7" stroke="currentColor" stroke-width="1"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -527,69 +489,103 @@
 </section>
 
 <!-- FLOATING WA -->
-<a href="https://wa.me/905347444139" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-</a>
+<div class="wa-fw">
+  <div class="wa-tip">5 dakika içinde dönelim mi? 💬</div>
+  <a href="https://wa.me/905347444139" class="wa-fb" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Vizyon Event Design</div>
-    <div class="footer-copy">© 2025 Vizyon Event Design. Tüm hakları saklıdır.</div>
-    <div class="footer-location">Yalova &amp; Kocaeli, Türkiye</div>
+  <div class="ft-in">
+    <div class="ft-brand">Vizyon Event Design</div>
+    <div class="ft-copy">© 2025 Vizyon Event Design. Tüm hakları saklıdır.</div>
+    <div class="ft-loc">Yalova &amp; Kocaeli, Türkiye</div>
   </div>
 </footer>
 
 <script>
-  // NAV SCROLL
-  var nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', function() {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // MOBILE MENU
-  document.getElementById('menuToggle').addEventListener('click', function() {
-    var links = document.getElementById('navLinks');
-    var isOpen = links.style.display === 'flex';
-    links.style.display = isOpen ? 'none' : 'flex';
-    links.style.flexDirection = 'column';
-    links.style.position = 'fixed';
-    links.style.top = '70px';
-    links.style.right = '0';
-    links.style.left = '0';
-    links.style.background = 'rgba(26,26,26,0.98)';
-    links.style.padding = '2rem';
-    links.style.borderBottom = '1px solid rgba(184,168,120,0.1)';
-    links.style.zIndex = '99';
-  });
-
-  document.querySelectorAll('#navLinks a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      if (window.innerWidth <= 640) {
-        document.getElementById('navLinks').style.display = 'none';
-      }
-    });
-  });
-
-  // REVEAL ON SCROLL
-  var reveals = document.querySelectorAll('.reveal');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
-  reveals.forEach(function(r) {
-    var rect = r.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      r.classList.add('visible');
+// TYPING EFFECT
+(function(){
+  var parts = ['Hayallerinizi ', '<em>geometrik</em>', '<br/>', 'bir gerçeğe dönüştürüyoruz'];
+  var full = 'Hayallerinizi geometrik\nbir gerçeğe dönüştürüyoruz';
+  var el = document.getElementById('typedEl');
+  var cur = document.getElementById('typedCur');
+  var i = 0;
+  var result = '';
+  var plainChars = full.split('');
+  function type(){
+    if(i < plainChars.length){
+      var ch = plainChars[i];
+      if(ch==='\n'){
+        if(i < 22) result += '</em><br/>';
+        else result += '<br/>';
+      } else if(i===14){ result += '<em>' + ch; }
+      else { result += ch; }
+      el.innerHTML = result;
+      i++;
+      setTimeout(type, i < 15 ? 60 : 42);
     } else {
-      observer.observe(r);
+      cur.style.display='none';
     }
+  }
+  setTimeout(type, 950);
+})();
+
+// NAV
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 60); });
+
+// MOBILE MENU
+document.getElementById('mt').addEventListener('click', function(){
+  var nl = document.getElementById('navLinks');
+  var open = nl.style.display==='flex';
+  nl.style.cssText = open ? 'display:none' : 'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(22,22,22,0.97);padding:2rem;border-bottom:1px solid rgba(184,168,120,0.1);z-index:99;backdrop-filter:blur(18px);gap:0.4rem;';
+});
+document.querySelectorAll('#navLinks a').forEach(function(a){
+  a.addEventListener('click', function(){
+    if(window.innerWidth<=640) document.getElementById('navLinks').style.display='none';
   });
+});
+
+// REVEAL
+var rvls = document.querySelectorAll('.reveal');
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+rvls.forEach(function(r){
+  if(r.getBoundingClientRect().top < window.innerHeight) r.classList.add('visible');
+  else obs.observe(r);
+});
+
+// PARALLAX
+var px = document.getElementById('abPx');
+document.addEventListener('mousemove', function(e){
+  var x = (e.clientX/window.innerWidth - 0.5)*16;
+  var y = (e.clientY/window.innerHeight - 0.5)*16;
+  if(px) px.style.transform='translate('+x+'px,'+y+'px)';
+});
+
+// EVENT TYPE SELECTOR
+document.querySelectorAll('.et-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.et-btn').forEach(function(x){ x.classList.remove('active'); });
+    b.classList.add('active');
+    document.getElementById('selType').value = b.getAttribute('data-t');
+  });
+});
+
+// FORM → WhatsApp
+document.getElementById('subBtn').addEventListener('click', function(){
+  var name = document.getElementById('fN').value.trim();
+  var phone = document.getElementById('fP').value.trim();
+  var type = document.getElementById('selType').value;
+  var msg = document.getElementById('fM').value.trim();
+  if(!name){ alert('Lütfen adınızı girin.'); return; }
+  var wa = 'Merhaba! Ben '+name+'.'+(type?' Etkinlik: '+type+'.':'')+(msg?' Not: '+msg:'')+(phone?' Tel: '+phone:'');
+  window.open('https://wa.me/905347444139?text='+encodeURIComponent(wa),'_blank');
+});
 </script>
 </body>
 </html>
