@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Vizyon Event Design | Yalova & Kocaeli Organizasyon | Söz Nişan Kına</title>
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_001.png"/>
+<link rel="icon" type="image/png" href="images/vi_001.png"/>
 <meta name="description" content="Yalova ve Kocaeli'nde söz, nişan, kına gecesi, baby shower ve özel davet organizasyonu. Vizyon Event Design ile hayalinizdeki organizasyon."/>
 <meta property="og:title" content="Vizyon Event Design — Yalova & Kocaeli Organizasyon"/>
 <meta property="og:description" content="Söz, Nişan, Kına, Baby Shower ve özel davetlerinizde kişiye özel tasarım. Yalova & Kocaeli."/>
@@ -22,7 +22,6 @@ html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--white);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-
 /* NAV */
 #mainNav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,backdrop-filter .4s}
 #mainNav.scrolled{background:rgba(13,12,9,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.1)}
@@ -30,14 +29,12 @@ img{display:block;max-width:100%}
 .nav-logo-top{display:flex;align-items:baseline}
 .nlv{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--gold-light);line-height:1}
 .nlt{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--white);letter-spacing:.15em;line-height:1}
-.nls{font-family:'Jost',sans-serif;font-size:.46rem;font-weight:200;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,168,76,.5)}
-.nav-links{display:flex;gap:2.5rem}
+.nls{font-family:'Jost',sans-serif;font-size:.46rem;font-weight:200;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,168,76,.5)}.nav-links{display:flex;gap:2.5rem}
 .nav-links a{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.5);transition:color .3s}
 .nav-links a:hover{color:var(--gold-light)}
 .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
 .menu-toggle span{display:block;width:22px;height:1px;background:var(--white)}
 @media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(13,12,9,.98);flex-direction:column;padding:2rem;gap:1.5rem}.nav-links.open{display:flex}.menu-toggle{display:flex}}
-
 /* WA BAR */
 #waBar{position:fixed;top:-70px;left:0;right:0;z-index:200;background:linear-gradient(135deg,#1a2a1a,#0d1a0d);border-bottom:1px solid rgba(37,211,102,.2);padding:.9rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;transition:top .5s cubic-bezier(.16,1,.3,1)}
 #waBar.show{top:0}
@@ -45,7 +42,6 @@ img{display:block;max-width:100%}
 #waBar a{display:inline-flex;align-items:center;gap:.5rem;background:#25d366;color:#fff;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1.2rem;white-space:nowrap}
 #waBar-x{background:none;border:none;color:rgba(245,243,239,.3);cursor:pointer;font-size:1rem;padding:.2rem .5rem}
 @media(max-width:600px){#waBar p{display:none}}
-
 /* SECTIONS */
 .section{padding:7rem 2rem;position:relative}
 .section-inner{max-width:1200px;margin:0 auto}
@@ -53,7 +49,6 @@ img{display:block;max-width:100%}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;margin-bottom:2rem;color:var(--white)}
 .section-title em{color:var(--gold-light);font-style:italic}
 .divider{width:60px;height:1px;background:var(--gold);margin-bottom:4rem;opacity:.4}
-
 /* HERO */
 #home{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 60%,#1c1608 0%,var(--dark) 70%)}
 .hero-rings{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -65,89 +60,64 @@ img{display:block;max-width:100%}
 .hero-sub{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:200;letter-spacing:.3em;color:rgba(245,243,239,.5);margin-bottom:2rem}
 .hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:rgba(245,243,239,.35);margin-bottom:3rem;max-width:500px}
 .hero-cta-wrap{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-
 /* BUTTONS */
 .btn-primary{display:inline-flex;align-items:center;gap:.8rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.25em;text-transform:uppercase;padding:.9rem 2rem;cursor:pointer;transition:all .3s}
 .btn-primary:hover{background:var(--gold);color:var(--dark)}
 .btn-ghost{display:inline-flex;align-items:center;gap:.8rem;background:transparent;border:1px solid rgba(245,243,239,.15);color:rgba(245,243,239,.5);font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.25em;text-transform:uppercase;padding:.9rem 2rem;cursor:pointer;transition:all .3s}
 .btn-ghost:hover{border-color:rgba(245,243,239,.4);color:var(--white)}
-
 /* SERVICES */
 #services{background:#141414}
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;margin-top:2rem}
-@media(max-width:1100px){.services-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:768px){.services-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.services-grid{grid-template-columns:1fr}}
-.service-card{background:#1d1d1d;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:background .4s;cursor:pointer}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:2rem}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+.service-card{background:#1d1d1d;padding:0 2.8rem 3rem;position:relative;overflow:hidden;transition:background .4s;cursor:pointer}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0;transition:opacity .4s}
-.service-card:hover{background:#252525}
+.service-card:hover{background:#232323}
 .service-card:hover::before{opacity:1}
-.service-card-icon{font-size:1.3rem;margin-bottom:.7rem;opacity:.55;display:block;transition:opacity .3s}
-.service-card:hover .service-card-icon{opacity:1}
-.service-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;margin-bottom:.35rem;color:var(--white);line-height:1.2}
-.service-subtitle{font-family:'Jost',sans-serif;font-size:.46rem;font-weight:200;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.45);margin-bottom:.8rem}
-.service-desc{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:300;line-height:1.7;color:rgba(245,243,239,.35);margin-bottom:1.2rem}
-.service-arrow{font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.35);display:inline-flex;align-items:center;gap:.4rem;transition:color .3s,gap .3s}
-.service-card:hover .service-arrow{color:var(--gold);gap:.7rem}
-
+.service-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0 -2.8rem 2rem;height:180px;position:relative;overflow:hidden}
+.service-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1),filter .4s;filter:brightness(.65) saturate(.8)}
+.service-gallery img:nth-child(1){transform-origin:left center}
+.service-gallery img:nth-child(3){transform-origin:right center}
+.service-card:hover .service-gallery img{filter:brightness(.9) saturate(1);transform:scale(1.04)}
+.service-gallery::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(to top,#1d1d1d,transparent);pointer-events:none;z-index:1}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(201,168,76,.06);line-height:1;margin:1.5rem 0 1.5rem}
+.service-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:.6rem;color:var(--white)}
+.service-subtitle{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:200;letter-spacing:.35em;text-transform:uppercase;color:rgba(201,168,76,.5);margin-bottom:1.2rem}
+.service-desc{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;line-height:1.85;color:rgba(245,243,239,.4);margin-bottom:2rem}
+.service-arrow{font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(201,168,76,.4);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s,gap .3s}
+.service-card:hover .service-arrow{color:var(--gold);gap:.8rem}
 /* STATS */
 .stats-band{background:rgba(201,168,76,.04);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08);padding:3rem 2rem}
 .stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
 @media(max-width:600px){.stats-inner{grid-template-columns:repeat(2,1fr)}}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:var(--gold);line-height:1}
 .stat-label{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.35);margin-top:.4rem}
-
 /* GALLERY */
 #gallery{background:#111}
 .gallery-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
 .gallery-filters{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:3rem}
 .filter-btn{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,239,.35);background:none;border:1px solid rgba(201,168,76,.12);padding:.45rem 1.2rem;cursor:pointer;transition:all .3s}
 .filter-btn.active,.filter-btn:hover{color:var(--gold);border-color:rgba(201,168,76,.45)}
-.gallery-section{display:flex;flex-direction:column;gap:4rem}
+.gallery-section{display:flex;flex-direction:column;gap:3.5rem}
 .gallery-group{transition:opacity .4s}
 .gallery-group.hidden{display:none}
-.gallery-group-label{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem}
+.gallery-group-label{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.2rem}
 .ggl{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.2),transparent)}
 .gallery-group-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;font-style:italic}
-
-/* Zigzag: her grupta büyük sol/sağ + 2 küçük */
-.gallery-zigzag{display:grid;gap:4px}
-/* Tek satır: büyük görsel solda + 2 küçük sağda */
-.gallery-zigzag.left-big{grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr}
-.gallery-zigzag.left-big .gi:first-child{grid-row:1/3}
-/* Tek satır: 2 küçük solda + büyük görsel sağda */
-.gallery-zigzag.right-big{grid-template-columns:1fr 1.6fr;grid-template-rows:1fr 1fr}
-.gallery-zigzag.right-big .gi:last-child{grid-row:1/3;grid-column:2}
-.gallery-zigzag.right-big .gi:nth-child(3){grid-column:1;grid-row:2}
-.gallery-zigzag.right-big .gi:nth-child(2){grid-column:1;grid-row:1}
-/* Genel görsel stili */
-.gi{overflow:hidden;cursor:pointer;min-height:200px}
-.gi-inner{position:relative;width:100%;height:100%;overflow:hidden;min-height:inherit}
+.gallery-row{display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
+@media(max-width:768px){.gallery-row{grid-template-columns:repeat(2,1fr)}}
+.gi{aspect-ratio:1;overflow:hidden;cursor:pointer}
+.gi-inner{position:relative;width:100%;height:100%;overflow:hidden}
 .gi-inner img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
 .gi:hover .gi-inner img{transform:scale(1.07)}
-.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 55%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:.8rem}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 60%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:1rem}
 .gi:hover .gi-ov{opacity:1}
-.gallery-tag{font-family:'Cormorant Garamond',serif;font-size:.85rem;font-style:italic;color:rgba(245,243,239,.9)}
-@media(max-width:600px){
-  .gallery-zigzag.left-big,.gallery-zigzag.right-big{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
-  .gallery-zigzag .gi:first-child,.gallery-zigzag .gi:last-child{grid-row:auto;grid-column:auto}
-  .gallery-zigzag .gi{min-height:140px}
-}
-
+.gallery-tag{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-style:italic;color:rgba(245,243,239,.85)}
 /* ZOOM LIGHTBOX */
-#zoom{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:1000;align-items:center;justify-content:center;cursor:default}
+#zoom{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
 #zoom.open{display:flex}
-#zoom-backdrop{position:absolute;inset:0;cursor:zoom-out}
-#zoom-img-wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding:3rem}
-#zoom img{max-width:90vw;max-height:88vh;object-fit:contain;box-shadow:0 0 80px rgba(0,0,0,.9);cursor:default;user-select:none}
-/* prev/next arrows */
-#zoom-prev,#zoom-next{position:absolute;top:50%;transform:translateY(-50%);z-index:3;background:rgba(13,12,9,.7);border:1px solid rgba(201,168,76,.25);color:var(--gold);font-size:1.2rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;user-select:none}
-#zoom-prev{left:1.2rem}
-#zoom-next{right:1.2rem}
-#zoom-prev:hover,#zoom-next:hover{background:rgba(201,168,76,.15);border-color:var(--gold)}
-#zoom-x{position:absolute;top:1.2rem;right:1.5rem;z-index:3;background:none;border:1px solid rgba(201,168,76,.3);color:var(--gold);font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;padding:.45rem .9rem;cursor:pointer}
-#zoom-counter{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:3;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,168,76,.5)}
-
+#zoom img{max-width:92vw;max-height:92vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,.8)}
+#zoom-x{position:absolute;top:1.5rem;right:2rem;background:none;border:1px solid rgba(201,168,76,.3);color:var(--gold);font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;padding:.5rem 1rem;cursor:pointer}
 /* LOGOSTORY */
 #logostory{background:var(--dark)}
 .logostory-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -157,7 +127,6 @@ img{display:block;max-width:100%}
 .logo-features{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .logo-feature-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--gold-light);margin-bottom:.5rem}
 .logo-feature-text{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:200;line-height:1.7;color:rgba(245,243,239,.4)}
-
 /* ABOUT */
 #about{background:#141414}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
@@ -169,7 +138,6 @@ img{display:block;max-width:100%}
 .about-values{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:2.5rem}
 .about-val{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,239,.35);display:flex;align-items:center;gap:.5rem}
 .about-val::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%}
-
 /* PRICING */
 #pricing{background:var(--dark)}
 .pricing-note{font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;color:rgba(245,243,239,.4);line-height:1.9;max-width:560px;margin-bottom:3rem}
@@ -186,24 +154,19 @@ img{display:block;max-width:100%}
 .pricing-features{list-style:none;margin-bottom:2.5rem}
 .pricing-features li{font-family:'Jost',sans-serif;font-size:.7rem;font-weight:200;color:rgba(245,243,239,.45);padding:.5rem 0;border-bottom:1px solid rgba(245,243,239,.04);padding-left:1rem;position:relative}
 .pricing-features li::before{content:'–';position:absolute;left:0;color:rgba(201,168,76,.4)}
-
 /* TESTIMONIALS */
 #testimonials{background:#141414;overflow:hidden}
-.testi-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-@media(max-width:768px){.testi-layout{grid-template-columns:1fr}}
-.testi-list{overflow:hidden;position:relative;height:320px}
-.testimonial-card{background:#1d1d1d;padding:2.2rem;border-bottom:1.5px solid #111;position:absolute;width:100%;top:0;opacity:0;transform:translateY(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);pointer-events:none}
-.testimonial-card.active{opacity:1;transform:translateY(0);z-index:2;pointer-events:auto}
-.testimonial-card.prev{opacity:0;transform:translateY(30px);z-index:1}
-.testimonial-stars{color:var(--gold);font-size:.9rem;margin-bottom:.8rem;letter-spacing:.2em}
-.testimonial-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(245,243,239,.6);margin-bottom:1.2rem}
+.testi-track-wrap{overflow:hidden;position:relative}
+.testi-track{display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.testimonial-card{flex:0 0 50%;padding:2.5rem 2rem;background:#1d1d1d;border-right:1.5px solid #111}
+@media(max-width:600px){.testimonial-card{flex:0 0 100%}}
+.testimonial-stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:.2em}
+.testimonial-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(245,243,239,.6);margin-bottom:1.5rem}
 .testimonial-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--white)}
-.testimonial-event{font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.4);margin-top:.25rem}
-.testi-info{position:sticky;top:8rem;padding-top:.5rem}
-.testi-dots{display:flex;gap:.7rem;flex-wrap:wrap}
-.testi-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,.2);cursor:pointer;transition:background .3s;border:none;padding:0}
+.testimonial-event{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.4);margin-top:.3rem}
+.testi-dots{display:flex;gap:.7rem;justify-content:center;margin-top:2rem}
+.testi-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,.2);cursor:pointer;transition:background .3s;border:none}
 .testi-dot.active{background:var(--gold)}
-
 /* CONTACT */
 #contact{background:var(--dark)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
@@ -218,7 +181,6 @@ img{display:block;max-width:100%}
 .form-input::placeholder{color:rgba(245,243,239,.25)}
 select.form-input option{background:#1a1a1a}
 textarea.form-input{resize:none;height:100px}
-
 /* LIGHTBOX (konsept) */
 #lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:900;align-items:center;justify-content:center;flex-direction:column;padding:2rem;cursor:pointer}
 #lb.open{display:flex}
@@ -228,16 +190,13 @@ textarea.form-input{resize:none;height:100px}
 #lb-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--gold);text-align:center;margin-bottom:1.2rem;letter-spacing:.1em}
 #lb-sub{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.4);text-align:center;margin-top:1rem}
 #lb-close{position:absolute;top:-2.5rem;right:0;background:none;border:1px solid rgba(201,168,76,.3);color:var(--gold);font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;padding:.45rem .9rem;cursor:pointer}
-
 /* KVKK MODAL */
 #kvkk{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;align-items:center;justify-content:center;padding:2rem}
 #kvkk.open{display:flex}
 #kvkk-inner{background:#1d1d1d;border:1px solid rgba(201,168,76,.2);max-width:580px;width:100%;max-height:80vh;overflow-y:auto;padding:3rem}
-
 /* FLOATING WA */
 #wa-float{position:fixed;bottom:2rem;right:2rem;z-index:300;background:#25d366;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2s ease-in-out infinite}
 @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 40px rgba(37,211,102,.7)}}
-
 /* FOOTER */
 footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,76,.08)}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
@@ -246,14 +205,137 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
 .footer-socials{display:flex;gap:1rem}
 .footer-socials a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid rgba(245,243,239,.1);color:rgba(245,243,239,.35);transition:all .3s;font-size:.75rem}
 .footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
-
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:none}
 .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}
-
 /* SCROLLBAR */
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3)}
+
+  #testimonials{background:#141414;overflow:hidden}
+  .testi-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  @media(max-width:900px){.testi-layout{grid-template-columns:1fr}}
+  .testi-left{overflow:hidden}
+  .testi-viewport{height:460px;overflow:hidden}
+  .testi-list{display:flex;flex-direction:column;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .testimonial-card{padding:2rem;background:#1d1d1d;border-bottom:1.5px solid #111;height:230px;overflow:hidden;flex-shrink:0}
+  .testi-right{position:sticky;top:8rem}
+  .testi-dots{display:flex;gap:.7rem;margin-top:2rem}
+  .testi-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,.2);cursor:pointer;border:none;transition:background .3s}
+  .testi-dot.active{background:var(--gold)}
+  .testimonial-stars{color:var(--gold);font-size:.95rem;margin-bottom:.8rem;letter-spacing:.2em}
+  .testimonial-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(245,243,239,.6);margin-bottom:1rem}
+  .testimonial-name{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:300;color:var(--white)}
+  .testimonial-event{font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.4);margin-top:.3rem}
+  
+  /* ════ MOBİL OPTİMİZASYON ════ */
+  @media(max-width:480px) {
+    /* Genel */
+    .section { padding:4rem 1.2rem }
+    .section-title { font-size:2rem }
+    .section-label { font-size:.48rem }
+    .divider { margin-bottom:2.5rem }
+
+    /* Nav */
+    #mainNav { padding:.7rem 1.2rem }
+    .nlv { font-size:1.7rem }
+    .nlt { font-size:1.15rem }
+    .nls { display:none }
+
+    /* Hero */
+    #home { padding:5rem 1.2rem 3rem }
+    .v-logo-wrap { width:150px; height:150px; margin-bottom:1.5rem }
+    .hero-headline { font-size:2.1rem }
+    .hero-eyebrow { font-size:.5rem }
+    .hero-sub { font-size:.6rem; letter-spacing:.2em }
+    .hero-tagline { font-size:.78rem; padding:0 .5rem }
+    .hero-cta-wrap { flex-direction:column; gap:.8rem }
+    .btn-primary, .btn-ghost { width:100%; justify-content:center; padding:.8rem 1rem }
+
+    /* WA Bar */
+    #waBar { padding:.7rem 1rem; gap:.8rem }
+    #waBar p { font-size:.6rem }
+    #waBar a { padding:.4rem .9rem; font-size:.55rem }
+
+    /* Services */
+    .services-grid { grid-template-columns:1fr; gap:1px }
+    .service-card { padding:0 1.5rem 2.5rem }
+    .service-title { font-size:1.4rem }
+    .service-subtitle { font-size:.48rem }
+    .service-desc { font-size:.7rem }
+
+    /* Stats */
+    .stats-band { padding:2rem 1.2rem }
+    .stats-inner { gap:1.5rem }
+    .stat-num { font-size:2.5rem }
+    .stat-label { font-size:.48rem }
+
+    /* Gallery */
+    .gallery-header { flex-direction:column; align-items:flex-start; gap:.8rem }
+    .gallery-filters { gap:.5rem }
+    .filter-btn { padding:.38rem .9rem; font-size:.5rem }
+    .gallery-row { grid-template-columns:1fr 1fr; gap:2px }
+    .gallery-group-title { font-size:.85rem }
+    .gallery-section { gap:2.5rem }
+
+    /* Logo Story */
+    .logostory-grid { grid-template-columns:1fr; gap:2.5rem }
+    .logostory-logo img { width:160px; height:160px }
+    .logo-features { grid-template-columns:1fr; gap:1.2rem; margin-top:2rem }
+
+    /* About */
+    .about-grid { grid-template-columns:1fr; gap:2rem }
+    .about-visual { min-height:220px }
+    .about-monogram { font-size:6rem }
+
+    /* Pricing */
+    .pricing-grid { grid-template-columns:1fr; gap:1px }
+    .pricing-card { padding:2rem 1.5rem }
+    .pricing-title { font-size:1.3rem }
+
+    /* Testimonials */
+    .testi-layout { grid-template-columns:1fr; gap:2rem }
+    .testi-right { position:static; order:-1 }
+    .testi-viewport { height:auto; max-height:280px }
+    .testimonial-card { height:auto; min-height:200px; padding:1.5rem }
+    .testimonial-text { font-size:.95rem }
+
+    /* Contact */
+    .contact-grid { grid-template-columns:1fr; gap:2.5rem }
+    .contact-info-item { margin-bottom:1rem }
+
+    /* Lightbox */
+    #lb-imgs { grid-template-columns:1fr 1fr; gap:3px }
+    #lb-inner { padding:0 }
+    #lb { padding:1rem }
+
+    /* Footer */
+    .footer-inner { flex-direction:column; align-items:center; text-align:center; gap:1.2rem }
+    .footer-copy { text-align:center }
+
+    /* Floating WA */
+    #wa-float { width:48px; height:48px; bottom:1.2rem; right:1.2rem }
+  }
+
+  @media(max-width:380px) {
+    .hero-headline { font-size:1.8rem }
+    .section-title { font-size:1.7rem }
+    .gallery-row { grid-template-columns:1fr 1fr }
+    .service-card { padding:0 1.2rem 2rem }
+  }
+  /* ════ TABLet ════ */
+  @media(min-width:481px) and (max-width:768px) {
+    .section { padding:5rem 1.5rem }
+    .hero-headline { font-size:2.8rem }
+    .section-title { font-size:2.4rem }
+    .services-grid { grid-template-columns:1fr 1fr }
+    .pricing-grid { grid-template-columns:1fr 1fr }
+    .about-grid { grid-template-columns:1fr }
+    .logostory-grid { grid-template-columns:1fr }
+    .contact-grid { grid-template-columns:1fr }
+    .testi-layout { grid-template-columns:1fr }
+    .testi-right { position:static; order:-1 }
+  }
+  ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3)}
 </style>
 </head>
 <body>
@@ -262,7 +344,7 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
 <div id="waBar">
   <p>💫 2026 organizasyonlarınız için rezervasyon alınıyor</p>
   <a href="https://wa.me/905347444139?text=Merhaba%2C%20organizasyon%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
-  <button id="waBar-x">✕</button>
+  <button id="waBar-x" onclick="document.getElementById('waBar').style.top='-70px'">✕</button>
 </div>
 
 <!-- NAV -->
@@ -291,10 +373,10 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
   </div>
   <div style="position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto">
     <div class="v-logo-wrap reveal">
-      <img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_001.png" alt="Vizyon Event Design Logo"/>
+      <img src="images/vi_001.png" alt="Vizyon Event Design Logo"/>
     </div>
     <p class="hero-eyebrow reveal reveal-delay-1">Yalova &amp; Kocaeli</p>
-    <h1 class="hero-headline reveal reveal-delay-2">Söz · Nişan · Kına<br/><em style="color:var(--gold-light);font-style:italic">Her Özel Anda</em></h1>
+    <h1 class="hero-headline reveal reveal-delay-2">Söz · Nişan · Kına<br/><em>Her Özel Anda</em></h1>
     <p class="hero-sub reveal reveal-delay-2">Söz · Nişan · Kına Gecesi · Davet &amp; Organizasyon</p>
     <p class="hero-tagline reveal reveal-delay-3">Siz sadece anı yaşayın; detayların ışıltısını bize bırakın</p>
     <div class="hero-cta-wrap reveal reveal-delay-3">
@@ -314,73 +396,93 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
     <div class="services-grid">
 
       <div class="service-card reveal reveal-delay-1" onclick="openLb('soz')">
+        
+        
         <h3 class="service-title">Söz &amp; Nişan</h3>
         <p class="service-subtitle">Nişan Organizasyonu</p>
         <p class="service-desc">Kişiye özel dekor, tematik masa düzeni ve kusursuz koordinasyonla en özel anınızı taçlandırıyoruz.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('nisan')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-2" onclick="openLb('kina')">
+        
+        
         <h3 class="service-title">Modern Kına</h3>
         <p class="service-subtitle">Kına Gecesi Organizasyonu</p>
         <p class="service-desc">Geleneksel ritüelleri çağdaş estetikle harmanlıyor; neon tabelalar ve özel ışık tasarımıyla unutulmaz kına geceleri yaratıyoruz.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('kina')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-3" onclick="openLb('lux')">
+        
+        
         <h3 class="service-title">Premium &amp; Lüks</h3>
         <p class="service-subtitle">Lüks Düğün Organizasyonu</p>
         <p class="service-desc">Prestijli organizasyonlarda kusursuz detay işçiliği, özel mekan tasarımı ve 5 yıldızlı hizmet.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('lux')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-1" onclick="openLb('boho')">
+        
+        
         <h3 class="service-title">Boho &amp; Dış Mekan</h3>
         <p class="service-subtitle">Doğal &amp; Bohem Organizasyon</p>
         <p class="service-desc">Pampas otları, doğal dokular ve açık hava büyüsüyle sahil, bahçe ve doğa konseptli organizasyonlar.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('boho')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-2" onclick="openLb('neon')">
+        
+        
         <h3 class="service-title">Romantik &amp; Neon</h3>
         <p class="service-subtitle">Modern Nişan &amp; Söz</p>
         <p class="service-desc">Neon tabelalar, soft tonlar ve çiçek dokunuşlarıyla modern romantik konseptler.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('nisan')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-3" onclick="openLb('detay')">
+        
+        
         <h3 class="service-title">Detay &amp; Sofra</h3>
         <p class="service-subtitle">Masa Dekoru &amp; Detay Tasarımı</p>
         <p class="service-desc">Sofra düzeni ve masa dekorasyonunda işçilik kalitemizi yansıtan kusursuz dokunuşlar.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('detay')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-1" onclick="openLb('birthday')">
+        
+        
         <h3 class="service-title">Doğum Günü &amp; Parti</h3>
         <p class="service-subtitle">Özel Gün Organizasyonu</p>
         <p class="service-desc">Tematik dekor, sürpriz kurulumları ve kişiselleştirilmiş detaylarla unutulmaz doğum günleri.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('birthday')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-2" onclick="openLb('baby')">
+        
+        
         <h3 class="service-title">Baby Shower</h3>
         <p class="service-subtitle">Dreamy Beginnings</p>
         <p class="service-desc">Pamuksu dokular ve masalsı detaylarla bebeğinizi karşılayan, gender reveal sürprizleriyle dolu organizasyonlar.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('baby')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-3" onclick="openLb('corporate')">
+        
+        
         <h3 class="service-title">Kurumsal &amp; Lansman</h3>
         <p class="service-subtitle">Business Elegance</p>
         <p class="service-desc">Marka kimliğinize uygun dekor, kokteyl masaları ve VIP karşılama hizmetiyle prestijli kurumsal etkinlikler.</p>
-        <span class="service-arrow">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('all')" class="service-arrow">Galeri'de İncele →</a>
       </div>
 
       <div class="service-card reveal reveal-delay-1" style="background:#1a1518" onclick="openLb('proposal')">
+        
+        
         <h3 class="service-title">Evlilik Teklifi</h3>
         <p class="service-subtitle" style="color:rgba(232,160,184,.7)">Sürpriz &amp; Romantik Anlar</p>
         <p class="service-desc">Sahil, çatı katı veya özel mekan fark etmez — ışıklı harfler, neon, çiçek ve koordinasyonla hayatınızın en özel anı.</p>
-        <span class="service-arrow" style="color:rgba(232,160,184,.5)">Galeri'de İncele →</span>
+        <a href="#gallery" onclick="filterGallery('teklif')" class="service-arrow" style="color:rgba(232,160,184,.5)">Galeri'de İncele →</a>
       </div>
 
     </div>
@@ -417,70 +519,21 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
     </div>
     <div class="gallery-section">
 
-      <div class="gallery-group" data-cat="nisan">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4a4b8">Söz &amp; Nişan</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag left-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_029.jpg" alt="Nişan Masası" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Nişan Masası</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_003.jpg" alt="Gold & Çiçek" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Gold & Çiçek</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_030.jpg" alt="Better Together" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Better Together</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="kina">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4847a">Modern Kına</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag right-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_032.jpg" alt="Kına Gecesi" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Kına Gecesi</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_033.jpg" alt="Modern Kına" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Modern Kına</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_034.jpg" alt="Kına Detay" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Kına Detay</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="lux">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4c49a">Premium &amp; Lüks</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag left-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_008.jpg" alt="Lüks Sahne" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Lüks Sahne</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_036.jpg" alt="Lüks İç Mekan" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Lüks İç Mekan</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_037.jpg" alt="Sonsuza Dek" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Sonsuza Dek</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="boho">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#c4b49e">Boho &amp; Outdoor</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag right-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_039.jpg" alt="Bohem Dış Mekan" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Bohem Dış Mekan</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_040.jpg" alt="Sahil Nikahı" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Sahil Nikahı</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_013.jpg" alt="Bahçe Konsept" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Bahçe Konsept</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="detay">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#9eb5c4">Antrasit &amp; Detay</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag left-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_042.jpg" alt="Geometrik" loading="lazy"/><div class="gi-ov"><div><small style="color:#9eb5c4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Antrasit & Mat</small><br/><span class="gallery-tag">Geometrik</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_043.jpg" alt="Antrasit Neon" loading="lazy"/><div class="gi-ov"><div><small style="color:#9eb5c4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Antrasit & Mat</small><br/><span class="gallery-tag">Antrasit Neon</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_044.jpg" alt="Masa Detayı" loading="lazy"/><div class="gi-ov"><div><small style="color:#9eb5c4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Detay & Sofra</small><br/><span class="gallery-tag">Masa Detayı</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="teklif">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#e8a0b8">Evlilik Teklifi</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag right-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_046.jpg" alt="Evlen Benimle" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Evlen Benimle</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_047.jpg" alt="Sahil Teklifi" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Sahil Teklifi</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_048.jpg" alt="Neon & Gece" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Neon & Gece</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="baby">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4a0b8">Baby Shower</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag left-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_050.jpg" alt="Oh Baby Neon" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Oh Baby Neon</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_051.jpg" alt="Boy or Girl?" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Boy or Girl?</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_052.jpg" alt="Boho Baby" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Boho Baby</span></div></div></div></div>
-        </div>
-      </div>
-      <div class="gallery-group" data-cat="birthday">
-        <div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#c8b870">Doğum Günü</span><span class="ggl"></span></div>
-        <div class="gallery-zigzag right-big" style="height:440px">
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_054.jpg" alt="Boho Parti" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Boho Parti</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_055.jpg" alt="Çiçek Kemeri" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Çiçek Kemeri</span></div></div></div></div>
-          <div class="gi"><div class="gi-inner"><img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_056.jpg" alt="Pastel Balon" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Pastel Balon</span></div></div></div></div>
-        </div>
-      </div>
+      <div class="gallery-group" data-cat="nisan"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4a4b8">Söz &amp; Nişan</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_002.jpg" alt="Nişan Masası" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Nişan Masası</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_003.jpg" alt="Gold & Çiçek" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Gold & Çiçek</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_004.jpg" alt="Better Together" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Better Together</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_005.jpg" alt="Modern Söz" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a4b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Söz & Nişan</small><br/><span class="gallery-tag">Modern Söz</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="kina"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4847a">Modern Kına</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_006.jpg" alt="Kına Gecesi" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Kına Gecesi</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_007.jpg" alt="Modern Kına" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Modern Kına</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_008.jpg" alt="Kına Detay" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Kına Detay</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_009.jpg" alt="Henna Night" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4847a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Modern Kına</small><br/><span class="gallery-tag">Henna Night</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="lux"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4c49a">Premium &amp; Lüks</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_010.jpg" alt="Lüks Sahne" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Lüks Sahne</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_011.jpg" alt="Lüks İç Mekan" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Lüks İç Mekan</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_012.jpg" alt="Sonsuza Dek" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Sonsuza Dek</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_013.jpg" alt="Beyaz & Altın" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4c49a;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Premium & Lüks</small><br/><span class="gallery-tag">Beyaz & Altın</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="boho"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#c4b49e">Boho &amp; Outdoor</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_014.jpg" alt="Bohem Dış Mekan" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Bohem Dış Mekan</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_015.jpg" alt="Sahil Nikahı" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Sahil Nikahı</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_016.jpg" alt="Bahçe Konsept" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Bahçe Konsept</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_017.jpg" alt="Doğa Konsept" loading="lazy"/><div class="gi-ov"><div><small style="color:#c4b49e;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Boho & Outdoor</small><br/><span class="gallery-tag">Doğa Konsept</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="detay"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#9eb5c4">Antrasit &amp; Detay</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_018.jpg" alt="Geometrik" loading="lazy"/><div class="gi-ov"><div><small style="color:#9eb5c4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Antrasit & Mat</small><br/><span class="gallery-tag">Geometrik</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_019.jpg" alt="Antrasit Neon" loading="lazy"/><div class="gi-ov"><div><small style="color:#9eb5c4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Antrasit & Mat</small><br/><span class="gallery-tag">Antrasit Neon</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_020.jpg" alt="Masa Detayı" loading="lazy"/><div class="gi-ov"><div><small style="color:#a4b4a4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Detay & Sofra</small><br/><span class="gallery-tag">Masa Detayı</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_021.jpg" alt="Sofra Düzeni" loading="lazy"/><div class="gi-ov"><div><small style="color:#a4b4a4;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Detay & Sofra</small><br/><span class="gallery-tag">Sofra Düzeni</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="teklif"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#e8a0b8">Evlilik Teklifi</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_022.jpg" alt="Evlen Benimle" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Evlen Benimle</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_023.jpg" alt="Sahil Teklifi" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Sahil Teklifi</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_024.jpg" alt="Neon & Gece" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Neon & Gece</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_025.jpg" alt="Marry Me" loading="lazy"/><div class="gi-ov"><div><small style="color:#e8a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Evlilik Teklifi</small><br/><span class="gallery-tag">Marry Me</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="baby"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#d4a0b8">Baby Shower</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_026.jpg" alt="Oh Baby Neon" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Oh Baby Neon</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_027.jpg" alt="Boy or Girl?" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Boy or Girl?</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_028.jpg" alt="Boho Baby" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Boho Baby</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_029.jpg" alt="Lüks Kurulum" loading="lazy"/><div class="gi-ov"><div><small style="color:#d4a0b8;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Baby Shower</small><br/><span class="gallery-tag">Lüks Kurulum</span></div></div></div></div></div></div>
+
+      <div class="gallery-group" data-cat="birthday"><div class="gallery-group-label"><span class="ggl"></span><span class="gallery-group-title" style="color:#c8b870">Doğum Günü</span><span class="ggl"></span></div><div class="gallery-row"><div class="gi"><div class="gi-inner"><img src="images/vi_030.jpg" alt="Boho Parti" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Boho Parti</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_031.jpg" alt="Çiçek Kemeri" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Çiçek Kemeri</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_032.jpg" alt="Pastel Balon" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Pastel Balon</span></div></div></div></div><div class="gi"><div class="gi-inner"><img src="images/vi_033.jpg" alt="Gender Reveal" loading="lazy"/><div class="gi-ov"><div><small style="color:#c8b870;letter-spacing:.2em;text-transform:uppercase;font-size:.45rem">Doğum Günü</small><br/><span class="gallery-tag">Gender Reveal</span></div></div></div></div></div></div>
 
     </div>
   </div>
@@ -491,7 +544,7 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
   <div class="section-inner">
     <div class="logostory-grid reveal">
       <div class="logostory-logo">
-        <img src="https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_001.png" alt="Vizyon Logo"/>
+        <img src="images/vi_001.png" alt="Vizyon Logo"/>
         <div class="logo-features">
           <div><div class="logo-feature-title">Elmas Gücü</div><div class="logo-feature-text">Geometrik V, elmasın keskin hat ve ışık kırılımını simgeler.</div></div>
           <div><div class="logo-feature-title">Pırlanta Kalitesi</div><div class="logo-feature-text">Her detayda mükemmeliyetçi bakış açısı.</div></div>
@@ -587,20 +640,24 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
 <section class="section" id="testimonials">
   <div class="section-inner">
     <div class="testi-layout">
-      <div class="testi-list" id="testiList">
-        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Nişanımızı hayal ettiğimizden çok daha güzel organize ettiler. Her detay düşünülmüştü, misafirlerimiz hâlâ konuşuyor."</p><div class="testimonial-name">Elif &amp; Mert</div><div class="testimonial-event">Nişan Organizasyonu · Kocaeli</div></div>
-        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Kına gecemiz inanılmazdı! Kırmızı-siyah sahne düzeni ve Henna Night neon tabelası muhteşemdi."</p><div class="testimonial-name">Selin Arslan</div><div class="testimonial-event">Kına Gecesi · Yalova</div></div>
-        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Baby shower için çok doğru kişiyi bulduk. Pastel balon kemeri ve Oh Baby neon tabela harikaydı!"</p><div class="testimonial-name">Neslihan Yıldız</div><div class="testimonial-event">Baby Shower · Kocaeli</div></div>
-        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Eşime sahilde evlilik teklifi yaptırdım. Her şey mükemmeldi, evet dedi!"</p><div class="testimonial-name">Kerem Doğan</div><div class="testimonial-event">Evlilik Teklifi · Yalova</div></div>
-        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Şirketimizin yıl sonu davetini organize ettirdik. Kurumsal kimliğimizi yansıtan dekor iş ortaklarımızı çok etkiledi."</p><div class="testimonial-name">Fatih Özdemir</div><div class="testimonial-event">Kurumsal Davet · İzmit</div></div>
-        <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Kızımın 1. yaş organizasyonunu yaptırdık. Boho konsept ve balon garlandı harikaydı, fotoğraflar albüm gibi çıktı!"</p><div class="testimonial-name">Ayşegül Çelik</div><div class="testimonial-event">Doğum Günü · Yalova</div></div>
+      <div class="testi-left">
+        <div class="testi-viewport">
+          <div class="testi-list" id="testiList">
+            <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Nişanımızı hayal ettiğimizden çok daha güzel organize ettiler. Zeynep Hanım gerçekten işinin ehli biri."</p><div class="testimonial-name">Elif &amp; Mert</div><div class="testimonial-event">Nişan Organizasyonu · Kocaeli</div></div>
+            <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Kına gecemiz inanılmazdı! Kırmızı-siyah sahne ve Henna Night neon tabelası muhteşemdi."</p><div class="testimonial-name">Selin Arslan</div><div class="testimonial-event">Kına Gecesi · Yalova</div></div>
+            <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Baby shower için çok doğru kişiyi bulduk. Pastel balon kemeri ve Oh Baby neon tabela harikaydı!"</p><div class="testimonial-name">Neslihan Yıldız</div><div class="testimonial-event">Baby Shower · Kocaeli</div></div>
+            <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Eşime sahilde evlilik teklifi yaptırdım. Her şey mükemmeldi, o an hayatımın en özel anıydı."</p><div class="testimonial-name">Kerem Doğan</div><div class="testimonial-event">Evlilik Teklifi · Yalova</div></div>
+            <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Şirketimizin yıl sonu davetini organize ettirdik. Kurumsal kimliğimizi yansıtan dekor iş ortaklarımızı çok etkiledi."</p><div class="testimonial-name">Fatih Özdemir</div><div class="testimonial-event">Kurumsal Davet · İzmit</div></div>
+            <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Kızımın 1. yaş doğum günü boho konsepti harikaydı. Fotoğraflar albüm gibi çıktı!"</p><div class="testimonial-name">Ayşegül Çelik</div><div class="testimonial-event">Doğum Günü · Yalova</div></div>
+          </div>
+        </div>
       </div>
-      <div class="testi-info">
+      <div class="testi-right reveal">
         <p class="section-label">Müşteri Yorumları</p>
         <h2 class="section-title">Onların <em>Hikayesi</em></h2>
         <div class="divider"></div>
-        <p style="font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;line-height:2;color:rgba(245,243,239,.4)">Her organizasyonda tek amacımız: sizin için en özel anı yaratmak. Misafirlerimizin mutluluğu bizim motivasyonumuz.</p>
-        <div class="testi-dots" id="testiDots" style="margin-top:2rem;justify-content:flex-start"></div>
+        <p style="font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;line-height:2;color:rgba(245,243,239,.35)">Her organizasyon bir hikaye, her müşteri bir ilham. Onların mutluluğu bizim en büyük ödülümüz.</p>
+        <div class="testi-dots" id="testiDots"></div>
       </div>
     </div>
   </div>
@@ -614,7 +671,7 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
       <div class="reveal">
         <div class="contact-info-item"><div class="contact-info-icon">📍</div><div><div class="contact-info-label">Konum</div><div class="contact-info-value">Yalova &amp; Kocaeli, Türkiye</div></div></div>
         <div class="contact-info-item"><div class="contact-info-icon">📱</div><div><div class="contact-info-label">WhatsApp</div><div class="contact-info-value"><a href="tel:+905347444139" style="color:inherit">+90 534 744 41 39</a></div></div></div>
-        <div class="contact-info-item"><div class="contact-info-icon">✉️</div><div><div class="contact-info-label">E-Posta</div><div class="contact-info-value"><a href="mailto:vizyoneventdesign@gmail.com" style="color:inherit">vizyoneventdesign@gmail.com</a></div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">✉️</div><div><div class="contact-info-label">E-Posta</div><div class="contact-info-value"><a href="/cdn-cgi/l/email-protection#7006190a091f1e1506151e0414150319171e30171d11191c5e131f1d" style="color:inherit"><span class="__cf_email__" data-cfemail="4c3a2536352322293a29223828293f252b220c2b212d2520622f2321">[email&#160;protected]</span></a></div></div></div>
       </div>
       <div class="reveal reveal-delay-2">
         <form id="contactForm">
@@ -660,16 +717,10 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
   </div>
 </div>
 
-<!-- ZOOM LIGHTBOX -->
-<div id="zoom">
-  <div id="zoom-backdrop"></div>
-  <button id="zoom-prev">&#8249;</button>
-  <div id="zoom-img-wrap">
-    <img id="zoom-img" src="" alt=""/>
-  </div>
-  <button id="zoom-next">&#8250;</button>
-  <button id="zoom-x">✕ Kapat</button>
-  <div id="zoom-counter"></div>
+<!-- ZOOM -->
+<div id="zoom" onclick="document.getElementById('zoom').classList.remove('open')">
+  <button id="zoom-x" onclick="document.getElementById('zoom').classList.remove('open')">✕ Kapat</button>
+  <img id="zoom-img" src="" alt=""/>
 </div>
 
 <!-- KVKK -->
@@ -678,7 +729,7 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
     <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--gold-light);margin-bottom:.5rem">Gizlilik Politikası</div>
     <div style="font-family:'Jost',sans-serif;font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(184,168,120,.4);margin-bottom:2rem">KVKK Aydınlatma Metni</div>
     <div style="font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;line-height:2;color:rgba(245,243,239,.5)">
-      <p style="margin-bottom:1rem"><strong style="color:var(--white)">Veri Sorumlusu:</strong> Vizyon Event Design (vizyoneventdesign@gmail.com)</p>
+      <p style="margin-bottom:1rem"><strong style="color:var(--white)">Veri Sorumlusu:</strong> Vizyon Event Design (<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="54223d2e2d3b3a3122313a203031273d333a143339353d387a373b39">[email&#160;protected]</a>)</p>
       <p style="margin-bottom:1rem"><strong style="color:var(--white)">Toplanan Veriler:</strong> İletişim formu aracılığıyla ad, telefon ve e-posta toplanmaktadır.</p>
       <p style="margin-bottom:1rem"><strong style="color:var(--white)">Kullanım Amacı:</strong> Yalnızca organizasyon teklifi hazırlamak amacıyla kullanılır. Üçüncü taraflarla paylaşılmaz.</p>
       <p><strong style="color:var(--white)">Haklarınız:</strong> KVKK kapsamında verilerinize erişme, düzeltme ve silme hakkınız mevcuttur.</p>
@@ -711,316 +762,201 @@ footer{background:#0a0908;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
   </div>
 </footer>
 
-<script>
-// =====================
-// LIGHTBOX DATA
-// =====================
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Lightbox DATA
 var lbData = {
-  soz:{title:'Söz & Nişan',sub:'Kişiye özel dekor · Masa düzeni · Koordinasyon',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_029.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_003.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_030.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_031.jpg']},
-  kina:{title:'Modern Kına Gecesi',sub:'Geleneksel & Modern · Işık · Sahne',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_032.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_033.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_034.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_035.jpg']},
-  lux:{title:'Premium & Lüks',sub:'Prestijli Salon · 5 Yıldız · Özel Tasarım',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_008.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_036.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_037.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_038.jpg']},
-  boho:{title:'Boho & Dış Mekan',sub:'Doğal Dokular · Sahil · Bahçe Konsepti',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_039.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_040.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_013.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_041.jpg']},
-  neon:{title:'Romantik & Neon',sub:'Neon Tabela · Soft Renkler · Modern',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_029.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_030.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_043.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_044.jpg']},
-  detay:{title:'Detay & Sofra',sub:'Masa Dekoru · Sofra · İşçilik',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_044.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_045.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_042.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_043.jpg']},
-  birthday:{title:'Doğum Günü & Parti',sub:'Tematik Dekor · Sürpriz · Kişisel',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_054.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_055.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_056.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_057.jpg']},
-  baby:{title:'Baby Shower & Gender Reveal',sub:'Dreamy Beginnings · Balon · İkram',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_050.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_051.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_052.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_053.jpg']},
-  corporate:{title:'Kurumsal & Lansman',sub:'Business Elegance · Marka · VIP',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_009.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_008.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_010.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_008.jpg']},
-  proposal:{title:'Evlilik Teklifi',sub:'Sürpriz · Romantik · Sahil · Neon',imgs:['https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_046.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_047.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_048.jpg','https://raw.githubusercontent.com/Eculaite79/vizyon-event-design/main/images/vi_049.jpg']}
+  soz:{title:'Söz & Nişan',sub:'Kişiye özel dekor · Masa düzeni · Koordinasyon',imgs:['images/vi_002.jpg','images/vi_003.jpg','images/vi_004.jpg','images/vi_005.jpg']},
+  kina:{title:'Modern Kına Gecesi',sub:'Geleneksel & Modern · Işık · Sahne',imgs:['images/vi_006.jpg','images/vi_007.jpg','images/vi_008.jpg','images/vi_009.jpg']},
+  lux:{title:'Premium & Lüks',sub:'Prestijli Salon · 5 Yıldız · Özel Tasarım',imgs:['images/vi_010.jpg','images/vi_011.jpg','images/vi_012.jpg','images/vi_013.jpg']},
+  boho:{title:'Boho & Dış Mekan',sub:'Doğal Dokular · Sahil · Bahçe Konsepti',imgs:['images/vi_014.jpg','images/vi_015.jpg','images/vi_016.jpg','images/vi_017.jpg']},
+  neon:{title:'Romantik & Neon',sub:'Neon Tabela · Soft Renkler · Modern',imgs:['images/vi_002.jpg','images/vi_004.jpg','images/vi_019.jpg','images/vi_020.jpg']},
+  detay:{title:'Detay & Sofra',sub:'Masa Dekoru · Sofra · İşçilik',imgs:['images/vi_020.jpg','images/vi_021.jpg','images/vi_018.jpg','images/vi_019.jpg']},
+  birthday:{title:'Doğum Günü & Parti',sub:'Tematik Dekor · Sürpriz · Kişisel',imgs:['images/vi_030.jpg','images/vi_031.jpg','images/vi_032.jpg','images/vi_033.jpg']},
+  baby:{title:'Baby Shower & Gender Reveal',sub:'Dreamy Beginnings · Balon · İkram',imgs:['images/vi_026.jpg','images/vi_027.jpg','images/vi_028.jpg','images/vi_029.jpg']},
+  corporate:{title:'Kurumsal & Lansman',sub:'Business Elegance · Marka · VIP',imgs:['images/vi_034.jpg','images/vi_010.jpg','images/vi_035.jpg','images/vi_010.jpg']},
+  proposal:{title:'Evlilik Teklifi',sub:'Sürpriz · Romantik · Sahil · Neon',imgs:['images/vi_022.jpg','images/vi_023.jpg','images/vi_024.jpg','images/vi_025.jpg']}
 };
 
 function openLb(key) {
-  var d = lbData[key];
-  if (!d) return;
+  var d = lbData[key]; if(!d) return;
   document.getElementById('lb-title').textContent = d.title;
   document.getElementById('lb-sub').textContent = d.sub;
-  var c = document.getElementById('lb-imgs');
-  c.innerHTML = '';
+  var c = document.getElementById('lb-imgs'); c.innerHTML='';
   d.imgs.forEach(function(src) {
     var img = document.createElement('img');
-    img.src = src;
-    img.alt = d.title;
-    c.appendChild(img);
+    img.src = src; img.alt = d.title; c.appendChild(img);
   });
   document.getElementById('lb').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
+function closeLb() { document.getElementById('lb').classList.remove('open'); document.body.style.overflow=''; }
 
-function closeLb() {
-  document.getElementById('lb').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// =====================
-// GALLERY ZOOM — prev/next + backdrop close
-// =====================
-var zoomImages = []; // tüm görünen görseller
-var zoomIndex = 0;
-
-function buildZoomImages() {
-  zoomImages = [];
-  document.querySelectorAll('.gallery-group:not(.hidden) .gi-inner img').forEach(function(img) {
-    zoomImages.push(img.src);
-  });
-}
-
-function openZoom(src) {
-  buildZoomImages();
-  var idx = zoomImages.indexOf(src);
-  zoomIndex = idx >= 0 ? idx : 0;
-  showZoomAt(zoomIndex);
-  document.getElementById('zoom').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function showZoomAt(i) {
-  if (!zoomImages.length) return;
-  zoomIndex = ((i % zoomImages.length) + zoomImages.length) % zoomImages.length;
-  document.getElementById('zoom-img').src = zoomImages[zoomIndex];
-  document.getElementById('zoom-counter').textContent = (zoomIndex + 1) + ' / ' + zoomImages.length;
-}
-
-function closeZoom() {
-  document.getElementById('zoom').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Galeri item tıklama
+// GALERİ ZOM (tıkla büyüt)
 document.addEventListener('click', function(e) {
   var gi = e.target.closest('.gi-inner');
   if (gi) {
     var img = gi.querySelector('img');
-    if (img) openZoom(img.src);
+    if (img) {
+      document.getElementById('zoom-img').src = img.src;
+      document.getElementById('zoom').classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+  }
+});
+document.getElementById('zoom').addEventListener('click', function(e) {
+  if (e.target === this || e.target.id === 'zoom-x') {
+    this.classList.remove('open');
+    document.body.style.overflow='';
   }
 });
 
-// Backdrop (boş alan) tıklama → kapat
-document.getElementById('zoom-backdrop').addEventListener('click', closeZoom);
-
-// X butonu
-document.getElementById('zoom-x').addEventListener('click', closeZoom);
-
-// Önceki
-document.getElementById('zoom-prev').addEventListener('click', function(e) {
-  e.stopPropagation();
-  showZoomAt(zoomIndex - 1);
-});
-
-// Sonraki
-document.getElementById('zoom-next').addEventListener('click', function(e) {
-  e.stopPropagation();
-  showZoomAt(zoomIndex + 1);
-});
-
-// Resme tıklayınca kapanmasın
-document.getElementById('zoom-img').addEventListener('click', function(e) {
-  e.stopPropagation();
-});
-
-// =====================
-// GALLERY FILTER
-// =====================
+// FİLTRE
 function filterGallery(cat) {
   document.querySelectorAll('.filter-btn').forEach(function(b) {
-    b.classList.toggle('active', b.getAttribute('data-filter') === cat);
+    b.classList.toggle('active', b.getAttribute('data-filter')===cat);
   });
   document.querySelectorAll('.gallery-group').forEach(function(g) {
-    g.classList.toggle('hidden', cat !== 'all' && g.getAttribute('data-cat') !== cat);
+    g.classList.toggle('hidden', cat!=='all' && g.getAttribute('data-cat')!==cat);
   });
-  buildZoomImages(); // filtre sonrası zoom listesini güncelle
 }
+// Galeri touch (yatay kaydırma)
+  document.querySelector('.gallery-filters') && (function() {
+    var gf = document.querySelector('.gallery-filters');
+    gf.style.overflowX = 'auto';
+    gf.style.flexWrap = 'nowrap';
+    gf.style.paddingBottom = '.3rem';
+    gf.style.webkitOverflowScrolling = 'touch';
+  })();
 
-document.querySelectorAll('.filter-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    filterGallery(this.getAttribute('data-filter'));
-  });
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() { filterGallery(this.getAttribute('data-filter')); });
 });
 
-// =====================
-// TESTIMONIALS CAROUSEL (tek, temiz versiyon)
-// =====================
+// TESTİMONİALS dikey kayma
 (function() {
-  var cards = Array.from(document.querySelectorAll('.testimonial-card'));
+  // Touch swipe testimonials
+  (function() {
+    var vp = document.querySelector('.testi-viewport');
+    if (!vp) return;
+    var startY = 0, isDragging = false;
+    vp.addEventListener('touchstart', function(e) { startY = e.touches[0].clientY; isDragging = true; }, {passive:true});
+    vp.addEventListener('touchend', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      var diff = startY - e.changedTouches[0].clientY;
+      if (Math.abs(diff) > 40) {
+        var cur = +document.querySelector('.testi-dot.active')?.getAttribute('data-i') || 0;
+        var total = document.querySelectorAll('.testi-dot').length;
+        if (diff > 0) goTo(Math.min(cur+1, total-1));
+        else goTo(Math.max(cur-1, 0));
+      }
+    });
+  })();
+
+  var list = document.getElementById('testiList');
   var dotsEl = document.getElementById('testiDots');
-  if (!cards.length || !dotsEl) return;
-
+  if (!list || !dotsEl) return;
+  var cards = list.querySelectorAll('.testimonial-card');
+  var total = Math.ceil(cards.length / 2);
   var cur = 0;
-  var total = cards.length;
-
-  // Başlangıç: hepsini gizle
-  cards.forEach(function(c) {
-    c.style.top = '';
-    c.style.zIndex = '';
-  });
-
-  function show(n) {
-    cur = ((n % total) + total) % total;
-    var next = (cur + 1) % total;
-
-    cards.forEach(function(c, i) {
-      c.classList.remove('active', 'prev');
-      c.style.top = '';
-      c.style.zIndex = '';
-    });
-
-    cards[cur].classList.add('active');
-    cards[cur].style.top = '0';
-    cards[cur].style.zIndex = '2';
-
-    cards[next].classList.add('active');
-    cards[next].style.top = '50%';
-    cards[next].style.zIndex = '1';
-
-    dotsEl.querySelectorAll('.testi-dot').forEach(function(d, i) {
-      d.classList.toggle('active', i * 2 === cur);
-    });
-  }
-
-  // Dot'ları oluştur (3 çift için 3 dot)
-  var pairs = Math.ceil(total / 2);
-  for (var i = 0; i < pairs; i++) {
+  for (var i=0; i<total; i++) {
     var d = document.createElement('button');
-    d.className = 'testi-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('data-i', i * 2);
-    d.addEventListener('click', function() {
-      show(+this.getAttribute('data-i'));
-      clearInterval(auto);
-    });
+    d.className = 'testi-dot' + (i===0?' active':'');
+    d.setAttribute('data-i', String(i));
+    d.addEventListener('click', function() { goTo(+this.getAttribute('data-i')); });
     dotsEl.appendChild(d);
   }
-
-  show(0);
-
-  var auto = setInterval(function() { show(cur + 2); }, 4500);
-
-  document.querySelector('.testi-list').addEventListener('mouseenter', function() { clearInterval(auto); });
-  document.querySelector('.testi-list').addEventListener('mouseleave', function() {
-    auto = setInterval(function() { show(cur + 2); }, 4500);
-  });
+  function goTo(n) {
+    cur = n;
+    var h = 232;
+    list.style.transform = 'translateY(-' + (cur * h * 2) + 'px)';
+    dotsEl.querySelectorAll('.testi-dot').forEach(function(d,i) {
+      d.classList.toggle('active', i===cur);
+    });
+  }
+  var auto = setInterval(function() { goTo((cur+1)%total); }, 4500);
+  list.addEventListener('mouseenter', function() { clearInterval(auto); });
+  list.addEventListener('mouseleave', function() { auto = setInterval(function() { goTo((cur+1)%total); }, 4500); });
 })();
 
-// =====================
-// NAV SCROLL + WA BAR
-// =====================
-var waBarDismissed = false;
-
-document.getElementById('waBar-x').addEventListener('click', function() {
-  waBarDismissed = true;
-  document.getElementById('waBar').classList.remove('show');
-});
-
+// NAV SCROLL
 window.addEventListener('scroll', function() {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
-  if (!waBarDismissed && window.scrollY > 600) {
-    document.getElementById('waBar').classList.add('show');
+  var bar = document.getElementById('waBar');
+  if (bar && window.scrollY > 600) bar.classList.add('show');
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY>50);
+  // WA BAR - sadece 600px sonra göster
+  var bar = document.getElementById('waBar');
+  if (bar && window.scrollY > 600 && bar.style.top !== '0px') {
+    bar.classList.add('show');
   }
 });
 
-// =====================
-// HAMBURGER MENU
-// =====================
+// HAMBURGER
 document.getElementById('menuToggle').addEventListener('click', function() {
   document.getElementById('navLinks').classList.toggle('open');
 });
 document.querySelectorAll('#navLinks a').forEach(function(a) {
-  a.addEventListener('click', function() {
-    document.getElementById('navLinks').classList.remove('open');
-  });
+  a.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); });
 });
 
-// =====================
-// STATS SAYAÇ
-// =====================
+// SAYAÇ
 function runCounters() {
   document.querySelectorAll('.stat-num[data-target]').forEach(function(el) {
-    var target = +el.getAttribute('data-target');
-    var suffix = el.getAttribute('data-suffix') || '';
-    var startTime = null;
-    var duration = 1800;
-
-    function anim(ts) {
-      if (!startTime) startTime = ts;
-      var progress = Math.min((ts - startTime) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target) + suffix;
-      if (progress < 1) requestAnimationFrame(anim);
-    }
+    var t=+el.getAttribute('data-target'), s=el.getAttribute('data-suffix')||'', st=null;
+    (function step(ts) {
+      if(!st) st=ts;
+      var p=Math.min((ts-st)/1800,1), e=1-Math.pow(1-p,3);
+      el.textContent=Math.floor(e*t)+s;
+      if(p<1) requestAnimationFrame(step);
+    })(0);
+    // restart
+    var st2=null;
+    function anim(ts) { if(!st2) st2=ts; var p=Math.min((ts-st2)/1800,1),e=1-Math.pow(1-p,3); el.textContent=Math.floor(e*t)+s; if(p<1) requestAnimationFrame(anim); }
     requestAnimationFrame(anim);
   });
 }
+new IntersectionObserver(function(e) { if(e[0].isIntersecting) runCounters(); },{threshold:.3}).observe(document.querySelector('.stats-band')||document.body);
 
-new IntersectionObserver(function(entries) {
-  if (entries[0].isIntersecting) {
-    runCounters();
-  }
-}, { threshold: 0.3 }).observe(document.querySelector('.stats-band') || document.body);
-
-// =====================
-// CONTACT FORM
-// =====================
+// FORM
 (function() {
   var form = document.getElementById('contactForm');
   if (!form) return;
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var btn = document.getElementById('formBtn');
-    var span = btn && btn.querySelector('span');
-    if (span) span.textContent = 'Gönderiliyor...';
-    if (btn) btn.disabled = true;
-
-    fetch('https://formspree.io/f/mojkzwpq', {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(function(r) {
-      if (r.ok) {
-        form.querySelectorAll('.form-group, #formBtn').forEach(function(el) {
-          el.style.display = 'none';
-        });
-        document.getElementById('formSuccess').style.display = 'block';
+    var btn=document.getElementById('formBtn'), span=btn&&btn.querySelector('span');
+    if(span) span.textContent='Gönderiliyor...';
+    if(btn) btn.disabled=true;
+    fetch('https://formspree.io/f/mojkzwpq',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    .then(function(r) {
+      if(r.ok) {
+        form.querySelectorAll('.form-group,#formBtn').forEach(function(el){el.style.display='none';});
+        document.getElementById('formSuccess').style.display='block';
         form.reset();
-      } else {
-        throw new Error();
-      }
+      } else throw new Error();
     }).catch(function() {
-      document.getElementById('formError').style.display = 'block';
-      if (span) span.textContent = 'Teklif Talep Et';
-      if (btn) btn.disabled = false;
+      document.getElementById('formError').style.display='block';
+      if(span) span.textContent='Teklif Talep Et';
+      if(btn) btn.disabled=false;
     });
   });
 })();
 
-// =====================
-// SCROLL REVEAL
-// =====================
-var revealObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
+// REVEAL
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+},{threshold:.05,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.reveal').forEach(function(r) {
-  if (r.getBoundingClientRect().top < window.innerHeight) {
-    r.classList.add('visible');
-  } else {
-    revealObs.observe(r);
-  }
+  if(r.getBoundingClientRect().top < window.innerHeight) r.classList.add('visible');
+  else obs.observe(r);
 });
 
-// =====================
-// ESC KEY
-// =====================
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
+  if(e.key==='Escape') {
     closeLb();
-    closeZoom();
+    document.getElementById('zoom').classList.remove('open');
     document.getElementById('kvkk').classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.style.overflow='';
   }
-  if (e.key === 'ArrowLeft' && document.getElementById('zoom').classList.contains('open')) showZoomAt(zoomIndex - 1);
-  if (e.key === 'ArrowRight' && document.getElementById('zoom').classList.contains('open')) showZoomAt(zoomIndex + 1);
 });
 </script>
 </body>
